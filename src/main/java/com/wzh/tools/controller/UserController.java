@@ -29,7 +29,7 @@ public class UserController {
      * @param userParam
      * @return
      */
-    @RequestMapping(value = "/info", method = RequestMethod.POST)
+    @RequestMapping(value = "/getUserInfo", method = RequestMethod.POST)
     public DataResult<UserData> getUserInfo(@RequestBody UserParam userParam) {
         Preconditions.checkNotNull(userParam.getUserCode(), "用户编码不能为空");
         Preconditions.checkArgument(StringUtils.isNotBlank(userParam.getUserCode()), "和上面校验效果一样");
