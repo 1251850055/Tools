@@ -11,7 +11,7 @@ public class ConvertToolUtil {
      * 利用反射实现对象之间相同属性复制
      *
      * @param source 要复制的
-     * @param target     复制给
+     * @param target 复制给
      */
     public static void copyProperties(Object source, Object target) throws Exception {
 
@@ -23,8 +23,7 @@ public class ConvertToolUtil {
      *
      * @param from
      * @param to
-     * @param excludsArray
-     *            排除属性列表
+     * @param excludsArray 排除属性列表
      * @throws Exception
      */
     public static void copyPropertiesExclude(Object from, Object to,
@@ -47,8 +46,9 @@ public class ConvertToolUtil {
             fromMethod = fromMethods[i];
             fromMethodName = fromMethod.getName();
 
-            if (!fromMethodName.contains("get"))
+            if (!fromMethodName.contains("get")) {
                 continue;
+            }
             // 排除列表检测
             if (excludesList != null
                     && excludesList.contains(fromMethodName.substring(3)
@@ -59,22 +59,25 @@ public class ConvertToolUtil {
             toMethodName = "set" + fromMethodName.substring(3);
             toMethod = findMethodByName(toMethods, toMethodName);
 
-            if (toMethod == null)
+            if (toMethod == null) {
                 continue;
+            }
             Object value = fromMethod.invoke(from, new Object[0]);
 
-            if (value == null)
+            if (value == null) {
                 continue;
+            }
             // 集合类判空处理
             if (value instanceof Collection) {
 
                 Collection<?> newValue = (Collection<?>) value;
 
-                if (newValue.size() <= 0)
+                if (newValue.size() <= 0) {
                     continue;
+                }
             }
 
-            toMethod.invoke(to, new Object[] { value });
+            toMethod.invoke(to, new Object[]{value});
         }
     }
 
@@ -109,8 +112,9 @@ public class ConvertToolUtil {
             fromMethod = fromMethods[i];
             fromMethodName = fromMethod.getName();
 
-            if (!fromMethodName.contains("get"))
+            if (!fromMethodName.contains("get")) {
                 continue;
+            }
 
             // 排除列表检测
             String str = fromMethodName.substring(3);
@@ -123,24 +127,27 @@ public class ConvertToolUtil {
             toMethodName = "set" + fromMethodName.substring(3);
             toMethod = findMethodByName(toMethods, toMethodName);
 
-            if (toMethod == null)
+            if (toMethod == null) {
                 continue;
+            }
 
             Object value = fromMethod.invoke(from, new Object[0]);
 
-            if (value == null)
+            if (value == null) {
                 continue;
+            }
 
             // 集合类判空处理
             if (value instanceof Collection) {
 
                 Collection<?> newValue = (Collection<?>) value;
 
-                if (newValue.size() <= 0)
+                if (newValue.size() <= 0) {
                     continue;
+                }
             }
 
-            toMethod.invoke(to, new Object[] { value });
+            toMethod.invoke(to, new Object[]{value});
         }
     }
 

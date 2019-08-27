@@ -168,8 +168,9 @@ public class StringUtil {
 	}
 
 	public static String formatStr(String date) {
-		if (date.length() > 19)
+		if (date.length() > 19) {
 			date = date.substring(0, 19);
+		}
 		return date;
 	}
 

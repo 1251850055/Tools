@@ -235,7 +235,7 @@ public final class DateUtils {
                         if ((Math.abs(dateOne - dateTwo)) < 100000000000L) {
                             timestamp = Math.max(timestampsLastTmp[0], timestampsLastTmp[1]);
                         } else {
-                            long now = new Date().getTime();
+                            long now = System.currentTimeMillis();
                             if (Math.abs(dateOne - now) <= Math.abs(dateTwo - now)) {
                                 timestamp = dateOne;
                             } else {
@@ -869,8 +869,9 @@ public final class DateUtils {
      * @return
      */
     public static String format(Date date, String format) {
-        if (date == null)
+        if (date == null) {
             return "";
+        }
 
         SimpleDateFormat sdf = new SimpleDateFormat(format);
 
@@ -1230,8 +1231,9 @@ public final class DateUtils {
         Calendar cal = Calendar.getInstance();
         cal.setTime(dt);
         int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
-        if (w < 0)
+        if (w < 0) {
             w = 0;
+        }
         return weekDays[w];
     }
 }
