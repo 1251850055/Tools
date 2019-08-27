@@ -1,4 +1,4 @@
-package com.wzh.tools.utils.bean;
+package com.wzh.tools.utils.operatingbean;
 
 import org.springframework.cglib.beans.BeanCopier;
 

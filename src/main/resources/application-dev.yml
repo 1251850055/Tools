@@ -8,4 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-
+#启动类也需要添加扫描Dao注解：@MapperScan("xxx")
+mybatis:
+  typeAliasesPackage: com.wzh.tools.domain
+  mapperLocations: classpath:mapper/*.xml
