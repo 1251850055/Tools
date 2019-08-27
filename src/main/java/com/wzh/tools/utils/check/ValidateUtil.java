@@ -1,6 +1,6 @@
 package com.wzh.tools.utils.check;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.FatalBeanException;
 
