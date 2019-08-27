@@ -1,0 +1,31 @@
+﻿1.定义数据类型的时候用封装类型，如果“钱”用BigDecimal类型
+
+2.BigDecimal舍0
+new BigDecimal(x).stripTrailingZeros().toPlainString()
+
+3.数据库时间查出来带有.0，DATE_FORMAT( coi.grant_time, '%Y-%c-%d %H:%i:%s' ) AS customTime,
+
+4.判断集合不为null或为[ ]用CollectionUtils.isNotEmpty(list)
+
+5.判断字符串不为null或为“”Preconditions.checkArgument(StringUtils.isNotBlank(str), "msg");
+
+6.数据库数据的区别 空值，null值，null
+
+7.//使用java正则表达式去掉多余的.与0
+protected static String subZeroAndDot(double discount){
+    String s = String.valueOf(discount);
+    if(s.indexOf(".") > 0){
+        s = s.replaceAll("0+?$", "");//去掉多余的0
+        s = s.replaceAll("[.]$", "");//如最后一位是.则去掉
+    }
+    return s;
+}
+
+8.用户登录流程
+（1）校验手机格式，校验用户信息，验证码发送计数，生成随机6位验证码，发送短信，缓存用户信息和验证码。
+
+ （2）取缓存验证手机号和验证码是否匹配，判断是否注册，
+
+8.Java随机生成6位数字   String.valueOf(new Random().nextInt(899999) + 100000);
+
+
