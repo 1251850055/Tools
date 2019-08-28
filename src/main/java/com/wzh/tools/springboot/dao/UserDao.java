@@ -1,6 +1,6 @@
-package com.wzh.tools.dao;
+package com.wzh.tools.springboot.dao;
 
-import com.wzh.tools.domain.entity.UserDataInfo;
+import com.wzh.tools.springboot.domain.entity.UserDataInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

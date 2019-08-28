@@ -1,8 +1,8 @@
-package com.wzh.tools.service;
+package com.wzh.tools.springboot.service;
 
-import com.wzh.tools.dao.UserDao;
-import com.wzh.tools.domain.entity.UserDataInfo;
-import com.wzh.tools.domain.response.UserData;
+import com.wzh.tools.springboot.dao.UserDao;
+import com.wzh.tools.springboot.domain.entity.UserDataInfo;
+import com.wzh.tools.springboot.domain.response.UserData;
 import com.wzh.tools.utils.resultdata.DataResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

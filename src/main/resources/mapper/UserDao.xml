@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wzh.tools.dao.UserDao">
+<mapper namespace="com.wzh.tools.springboot.dao.UserDao">
 
-    <select id="getUserInfo" resultType="com.wzh.tools.domain.entity.UserDataInfo">
+    <select id="getUserInfo" resultType="com.wzh.tools.springboot.domain.entity.UserDataInfo">
         SELECT
         id,
         `name`,

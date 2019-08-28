@@ -1,7 +1,7 @@
-package com.wzh.tools.service;
+package com.wzh.tools.springboot.service;
 
 
-import com.wzh.tools.domain.response.UserData;
+import com.wzh.tools.springboot.domain.response.UserData;
 import com.wzh.tools.utils.resultdata.DataResult;
 
 /**

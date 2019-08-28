@@ -1,4 +1,4 @@
-package com.wzh.tools.domain.entity;
+package com.wzh.tools.springboot.domain.entity;
 
 import lombok.Data;
 

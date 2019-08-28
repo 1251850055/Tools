@@ -1,4 +1,4 @@
-package com.wzh.tools.domain.request;
+package com.wzh.tools.springboot.domain.request;
 
 import lombok.Data;
 

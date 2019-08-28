@@ -10,5 +10,5 @@ spring:
 
 #启动类也需要添加扫描Dao注解：@MapperScan("xxx")
 mybatis:
-  typeAliasesPackage: com.wzh.tools.domain
+  typeAliasesPackage: com.wzh.tools.spring.domain
   mapperLocations: classpath:mapper/*.xml
