@@ -1,6 +1,7 @@
 package com.wzh.tools.utils.jax;
 
-import com.sun.deploy.util.StringUtils;
+
+import org.apache.commons.lang.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
