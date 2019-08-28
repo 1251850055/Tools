@@ -3,7 +3,7 @@ package com.wzh.tools;
 import com.alibaba.fastjson.JSONObject;
 import com.wzh.tools.springboot.domain.response.UserData;
 import com.wzh.tools.springboot.service.UserService;
-import com.wzh.tools.utils.resultdata.DataResult;
+import com.wzh.tools.utils.dataresult.DataResult;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.wzh.tools.utils.resultdata;
+package com.wzh.tools.utils.dataresult;
 
 
 import java.io.Serializable;
@@ -9,10 +9,10 @@ import java.io.Serializable;
  * @Date: 2019/8/27 19:10
  */
 
-abstract class Result implements Serializable {
+abstract class BaseResult implements Serializable {
     private static final long serialVersionUID = -5308103810673743579L;
 
-    Result() {
+    BaseResult() {
     }
 
     public abstract Status getStatus();

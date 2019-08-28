@@ -1,4 +1,4 @@
-package com.wzh.tools.utils;
+package com.wzh.tools.utils.jax;
 
 import com.sun.deploy.util.StringUtils;
 

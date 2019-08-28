@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import com.wzh.tools.springboot.domain.request.UserParam;
 import com.wzh.tools.springboot.domain.response.UserData;
 import com.wzh.tools.springboot.service.UserService;
-import com.wzh.tools.utils.resultdata.DataResult;
+import com.wzh.tools.utils.dataresult.DataResult;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

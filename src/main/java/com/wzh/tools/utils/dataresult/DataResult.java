@@ -1,4 +1,4 @@
-package com.wzh.tools.utils.resultdata;
+package com.wzh.tools.utils.dataresult;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -16,7 +16,7 @@ import java.util.Map;
  * @Date: 2019/8/27 19:10
  */
 
-public class DataResult<T> extends Result implements Serializable {
+public class DataResult<T> extends BaseResult implements Serializable {
     private static final long serialVersionUID = 7179573567777020185L;
     /**
      * 解析协议状态码

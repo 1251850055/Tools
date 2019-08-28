@@ -1,4 +1,4 @@
-package com.wzh.tools.utils.resultdata;
+package com.wzh.tools.utils.dataresult;
 
 import java.io.Serializable;
 import java.util.List;

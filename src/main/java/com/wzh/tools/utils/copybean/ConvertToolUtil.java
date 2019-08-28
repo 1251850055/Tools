@@ -1,4 +1,4 @@
-package com.wzh.tools.utils.operatingbean;
+package com.wzh.tools.utils.copybean;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.wzh.tools.utils.resultdata;
+package com.wzh.tools.utils.dataresult;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
