@@ -1,0 +1,31 @@
+1.初看coupon卡券项目
+（1）前端调用coupon服务流转，例如查询票券列表，请求路径url：xxx/coupon/code/query
+biz.CouponCodeController.findCouponCodeList(返回JSONObject类型)——
+api.CouponCodeFacade（api对外接口）——service.CouponCodeFacadeImpl（dubbo接口实现类）
+——CouponCodeService（业务逻辑处理接口）——CouponCodeServiceImpl（业务处理实现类）——CouponCodeMapper（Mybatis映射Dao）——CouponCodeMapper.xml
+（2）coupon-service.constants 静态枚举
+（3）定时任务在utils工具包目录下
+（4）service.config 配置定时任务
+
+2.POS端配置信息和慧影云账号
+测试服务器地址：testpos.oristarcloud.com 门店许可：b0233f558a2191d1   慧影云账号gd0606   test  123qwe
+预生产服务器地址：prepos.oristarcloud.com  门店许可：36adfa8904669b80 慧影云账号oristar  dmin  123qwe
+
+
+3.票券接口排查问题
+coupon.ws_call_log-xxxx表，根据参数条件插件返回接口值
+select * from ws_call_log-xxxx where params like ‘%参数%’
+
+4.数据迁移预演影院信息
+影院UID：521807 影院编码：32108811 影院名称:悦影绘南通店 租户ID:798080
+影院UID：995746 影院编码：36031401 影院名称:悦影绘萍乡店 租户ID:798080
+影院UID：513981 影院编码：44001961 影院名称:中都影城 租户ID:932208
+
+5.数据迁移悦影会中间库配置信息
+Ip：rm-8vb9q680y22ps4zor.mysql.zhangbei.rds.aliyuncs.com
+库：data_conver_db
+端口：3306
+用户：data_conver_db
+密码：m2ARzDT6G3Sjitx1
+
+
