@@ -1,4 +1,4 @@
-package com.wzh.tools.ka.process.service.impl;//package kac.trade.process.service.impl;
+package com.wzh.tools.vc.ka.process.service.impl;//package kac.trade.process.service.impl;
 //
 //
 //import cn.vcfilm.sts.framework.code.ProcessCode;

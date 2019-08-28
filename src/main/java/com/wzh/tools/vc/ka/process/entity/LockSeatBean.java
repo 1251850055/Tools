@@ -1,4 +1,4 @@
-package com.wzh.tools.ka.process.entity;//package kac.trade.process.entity;
+package com.wzh.tools.vc.ka.process.entity;//package kac.trade.process.entity;
 //
 //import io.swagger.annotations.ApiModel;
 //import io.swagger.annotations.ApiModelProperty;

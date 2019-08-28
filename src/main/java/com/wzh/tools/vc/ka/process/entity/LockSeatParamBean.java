@@ -1,4 +1,4 @@
-package com.wzh.tools.ka.process.entity;//package kac.trade.process.entity;
+package com.wzh.tools.vc.ka.process.entity;//package kac.trade.process.entity;
 //
 //import com.vcfilm.kac.entity.param.PlatformParam;
 //import io.swagger.annotations.ApiModel;

@@ -1,4 +1,4 @@
-package com.wzh.tools.ka.trade;
+package com.wzh.tools.vc.ka.trade;
 
 import lombok.Data;
 

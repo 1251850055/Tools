@@ -1,4 +1,4 @@
-package com.wzh.tools.ka.process.lockseat;//package kac.trade.process.lockseat;
+package com.wzh.tools.vc.ka.process.lockseat;//package kac.trade.process.lockseat;
 //
 //
 //import cn.vcfilm.sts.opencommon.domian.DataResult;

@@ -1,4 +1,4 @@
-package com.wzh.tools.ka.process.base;//package kac.trade.process.base;
+package com.wzh.tools.vc.ka.process.base;//package kac.trade.process.base;
 //
 //
 //import cn.vcfilm.sts.opencommon.domian.DataResult;
