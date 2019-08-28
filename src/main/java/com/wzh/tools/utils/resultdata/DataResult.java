@@ -70,22 +70,6 @@ public class DataResult<T> extends Result implements Serializable {
         return dataResult;
     }
 
-    @SuppressWarnings("unchecked")
-    @Deprecated
-    public static <T> DataResult<T> success(Object result, Class<T> type) {
-        DataResult<T> dataResult = new DataResult<T>();
-        dataResult.setResult((T) result);
-        return dataResult;
-    }
-
-    @SuppressWarnings("unchecked")
-    @Deprecated
-    public static <T> DataResult<List<T>> success(List<T> result, Class<T> type) {
-        DataResult<List<T>> dataResult = new DataResult<List<T>>();
-        dataResult.setResult(result);
-        return dataResult;
-    }
-
     public static <T> DataResult<T> failed(int statusCode, String statusReason) {
         DataResult<T> dataResult = new DataResult<T>();
         dataResult.setStatus(new Status(statusCode, statusReason));
