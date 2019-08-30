@@ -7,10 +7,10 @@ api.CouponCodeFacade（api对外接口）——service.CouponCodeFacadeImpl（du
 （3）定时任务在utils工具包目录下
 （4）service.config 配置定时任务
 
-2.POS端配置信息和慧影云账号
+2.POS端配置信息和慧影云账号，wangzehui，wangzehui123
 测试服务器地址：testpos.oristarcloud.com 门店许可：b0233f558a2191d1   慧影云账号gd0606   test  123qwe
-预生产服务器地址：prepos.oristarcloud.com  门店许可：36adfa8904669b80 慧影云账号oristar  dmin  123qwe
-
+预生产服务器地址：prepos.oristarcloud.com  门店许可：36adfa8904669b80 慧影云账号oristar  admin  123qwe
+web登录，ABC321，b0233f558a2191d1
 
 3.票券接口排查问题
 coupon.ws_call_log-xxxx表，根据参数条件插件返回接口值
@@ -29,3 +29,8 @@ Ip：rm-8vb9q680y22ps4zor.mysql.zhangbei.rds.aliyuncs.com
 密码：m2ARzDT6G3Sjitx1
 
 
+6.Dubbo地址账号 root root
+测试
+http://172.26.71.223:8080/
+开发
+http://172.26.71.210:8080/
