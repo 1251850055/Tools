@@ -51,7 +51,8 @@ http://172.26.71.223:8080/
 开发
 http://172.26.71.210:8080/
 
-7.生产环境账号
+7.慧影云:https://www.oristarcloud.com/login
+生产环境账号
 租户ID:339158
 wein
 admin
@@ -77,3 +78,9 @@ coupon_order_item_339158
 coupon_apply_codes_339158
 coupon_apply_receivable_339158
 coupon_apply_receivable_item_339158
+
+脚本4
+-- 更新票券销售申请单管理
+UPDATE coupon_apply_339158 ca
+SET ca.consume_count = ( SELECT dca.consume_count FROM data_conver_db.coupon_apply_339158 dca WHERE ca.id = dca.id ),
+ca.consume_amount = ( SELECT dca.consume_amount FROM data_conver_db.coupon_apply_339158 dca WHERE ca.id = dca.id );
