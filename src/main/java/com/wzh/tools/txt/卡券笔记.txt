@@ -56,7 +56,7 @@ http://172.26.71.210:8080/
 租户ID:339158
 wein
 admin
-oristar123
+wein123456
 
 租户ID:584105
 oristar
