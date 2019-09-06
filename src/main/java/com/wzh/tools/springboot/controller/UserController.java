@@ -25,7 +25,7 @@ public class UserController {
      * 注解
      * @Controller 类中的方法可以直接通过返回String跳转到jsp、ftl、html等模版页面。在方法上加@ResponseBody注解，也可以返回实体对象。
      * @RestController 类中的所有方法只能返回String、Object、Json等实体对象，不能跳转到模版页面。
-     * @RestController 相当于 @ResponseBody + @Controller。
+     * @RestController，一般是使用在类上的，它表示的意思其实就是结合了@Controller和@ResponseBody两个注解
      */
 
     @Autowired
