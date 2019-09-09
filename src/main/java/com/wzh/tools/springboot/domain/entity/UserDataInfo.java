@@ -14,11 +14,11 @@ public class UserDataInfo {
 
     private Integer id;
 
-    private String name;
+    private String userName;
 
     private String userCode;
 
-    private String phone;
+    private String userPhone;
 
     private LocalDateTime createTime;
 

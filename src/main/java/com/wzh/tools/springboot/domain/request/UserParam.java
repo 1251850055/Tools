@@ -13,7 +13,24 @@ import java.io.Serializable;
 public class UserParam implements Serializable {
     private static final long serialVersionUID = 5373828888042874615L;
 
+    /**
+     * 用户编码
+     */
     private String userCode;
 
+    /**
+     * 用户姓名
+     */
+    private String userName;
+
+    /**
+     * 页大小
+     */
+    private Integer rows = 10;
+
+    /**
+     * 页码
+     */
+    private Integer currentPage = 1;
 
 }

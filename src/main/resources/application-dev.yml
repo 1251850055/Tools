@@ -12,3 +12,10 @@ spring:
 mybatis:
   typeAliasesPackage: com.wzh.tools.spring.domain
   mapperLocations: classpath:mapper/*.xml
+
+
+logging:
+  level:
+    com:
+      looedu:
+        mapper: debug
