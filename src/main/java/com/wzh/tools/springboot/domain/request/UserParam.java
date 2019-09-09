@@ -24,6 +24,11 @@ public class UserParam implements Serializable {
     private String userName;
 
     /**
+     * 用户手机号
+     */
+    private String userPhone;
+
+    /**
      * 页大小
      */
     private Integer rows = 10;

@@ -16,5 +16,5 @@ public interface UserDao {
 
     UserDataInfo getUserInfo(@Param("userCode") String userCode);
 
-    List<UserDataInfo> getUserList(@Param("userName") String userName);
+    List<UserDataInfo> getUserList(@Param("userPhone") String userPhone);
 }

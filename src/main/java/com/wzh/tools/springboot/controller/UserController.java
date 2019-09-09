@@ -47,11 +47,11 @@ public class UserController {
     }
 
     /**
-     * 查询用户列表
+     * 根据手机号 查询用户列表
      */
     @RequestMapping(value = "/getUserList", method = RequestMethod.POST)
     public DataResult<PageEntity<List<UserData>>> getUserList(@RequestBody UserParam userParam) {
-        Preconditions.checkNotNull(userParam.getUserName(), "用户姓名不能为空");
+        Preconditions.checkNotNull(userParam.getUserPhone(), "用户手机号不能为空");
         return userService.getUserList(userParam);
     }
 }

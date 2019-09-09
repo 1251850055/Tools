@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
         //分页
         PageHelper.startPage(userParam.getCurrentPage(), userParam.getRows());
         try {
-            List<UserDataInfo> userDataList = userDao.getUserList(userParam.getUserName());
+            List<UserDataInfo> userDataList = userDao.getUserList(userParam.getUserPhone());
             PageInfo<UserDataInfo> pageInfo = new PageInfo<>(userDataList);
             userDataList.forEach(userDataInfo -> {
                 UserData userData = new UserData();

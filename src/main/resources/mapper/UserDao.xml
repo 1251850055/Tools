@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzh.tools.springboot.dao.UserDao">
 
-    <select id="getUserInfo" parameterType="java.lang.String" resultType="com.wzh.tools.springboot.domain.entity.UserDataInfo">
+    <select id="getUserInfo" resultType="com.wzh.tools.springboot.domain.entity.UserDataInfo">
         SELECT
         id,
         user_name AS userName,
@@ -23,7 +23,7 @@
         create_time AS createTime,
         update_time AS updateTime
         FROM user
-        WHERE user_name LIKE CONCAT(CONCAT('%', #{userName,jdbcType=VARCHAR}), '%')
+        WHERE user_phone LIKE CONCAT(CONCAT('%', #{userPhone,jdbcType=VARCHAR}), '%')
     </select>
 
 </mapper>
