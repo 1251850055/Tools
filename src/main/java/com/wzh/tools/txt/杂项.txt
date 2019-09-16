@@ -1,5 +1,5 @@
+测试环境满天星，写死打包上服务
 满天星会员sellTicket
-
 CMTSMemberServiceImpl
 member.setMemberCode("TEST");
 member.setMemberPayCode("70");

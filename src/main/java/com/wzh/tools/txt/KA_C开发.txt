@@ -62,7 +62,6 @@ UserResult userResult = JSONObject.parseObject(JSONObject.toJSONString(exchange.
 sale_order_ticket. service_fee_cinema  = ka_plan_price.cinema_service_fee
 sale_order_ticket. service_fee_ka  = ka_plan_price.service_fee
 sale_order_ticket. service_fee_tps = cinema_plan.connect_fee
-
 sale_order_ticket. service_fee_vc = cinema_investor.vc_service_fee
 
 注意问题
@@ -78,9 +77,6 @@ sale_order_ticket. service_fee_vc = cinema_investor.vc_service_fee
 
 D:\Tools\Apache\Maven\Repository_ka\com\vcfilm
 
-问题：
-idea 2018.3.6破解
-https://blog.csdn.net/qq_27261375/article/details/88984565
 
 TicketSupplementAmountData data = new TicketSupplementAmountData();
 data.setActivityName("测试马建活动");
@@ -97,11 +93,13 @@ listData.add(ticketSupplementAttributeData);
 data.setTicketSupplementAttributeDatas(listData);
 activitySeat.setResult(data);
 
+
 预生产
 vc端
 http://vcvipservice.vcfilm.com.cn
 VC管理员账号：kacjzh@vcfilm.cn
 密码：111111
+
 
 影投/影院端
 http://vcvip.vcfilm.com.cn
@@ -109,6 +107,7 @@ http://vcvip.vcfilm.com.cn
 密码：111111
 影院账号：testcinema
 密码：111111
+
 
 http://vcviph5.vcfilm.com.cn/page/movie?siteCode=1001
 
