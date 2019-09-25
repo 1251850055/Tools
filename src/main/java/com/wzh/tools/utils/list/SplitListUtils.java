@@ -16,6 +16,9 @@ public class SplitListUtils {
      * @return
      */
     public static <T> List<List<T>> averageAssign(List<T> source, int n) {
+        if (n <= 0) {
+            n = 1;
+        }
         List<List<T>> result = new ArrayList<List<T>>();
         //(先计算出余数)
         int remaider = source.size() % n;
