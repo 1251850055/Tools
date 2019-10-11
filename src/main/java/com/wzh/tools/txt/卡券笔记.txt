@@ -84,3 +84,24 @@ coupon_apply_receivable_item_339158
 UPDATE coupon_apply_339158 ca
 SET ca.consume_count = ( SELECT dca.consume_count FROM data_conver_db.coupon_apply_339158 dca WHERE ca.id = dca.id ),
 ca.consume_amount = ( SELECT dca.consume_amount FROM data_conver_db.coupon_apply_339158 dca WHERE ca.id = dca.id );
+
+
+
+大地定制版
+Pos
+http://dadidevpos.oristarcloud.com/login
+收益平台( GD0606   admin   123qwe) (GD0606 wangzehui wangzehui123)
+http://dadidev.oristarcloud.com/login
+运营平台(admin   123qwe)
+http://dadidevops.oristarcloud.com/login
+
+
+新环境jenkins
+http://10.180.6.242:8080(wangzehui,BkKESYiMeJvQdpYB)
+新环境jumpserver
+http://10.180.6.228/
+c03-dadi-devenv003 10.180.7.4  营销  票券
+
+
+
+
