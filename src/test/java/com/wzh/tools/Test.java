@@ -1,6 +1,10 @@
 package com.wzh.tools;
 
 
+import org.springframework.util.CollectionUtils;
+
+import java.util.ArrayList;
+
 /**
  * @Description:
  * @Author: wangzehui
@@ -10,10 +14,10 @@ package com.wzh.tools;
 public class Test {
     public static void main(String[] args) {
 
-        String[] s = {"a","b", "c", "d", "e" };
+        ArrayList<Object> objects = new ArrayList<>();
 
-        String join = String.join(",", s);
+        System.out.println(objects.isEmpty());
 
-        System.out.println(join);
+        System.out.println(CollectionUtils.isEmpty(objects));
     }
 }

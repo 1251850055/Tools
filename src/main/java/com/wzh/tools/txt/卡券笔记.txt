@@ -87,7 +87,7 @@ ca.consume_amount = ( SELECT dca.consume_amount FROM data_conver_db.coupon_apply
 
 
 
-大地定制版
+大地定制版开发
 Pos
 http://dadidevpos.oristarcloud.com/login
 收益平台( GD0606   admin   123qwe) (GD0606 wangzehui wangzehui123)
@@ -95,6 +95,10 @@ http://dadidev.oristarcloud.com/login
 运营平台(admin   123qwe)
 http://dadidevops.oristarcloud.com/login
 
+
+大地定制版测试
+http://dadidev.oristarcloud.com/analysis/group/home
+GD0606   admin   123qwe
 
 新环境jenkins
 http://10.180.6.242:8080(wangzehui,BkKESYiMeJvQdpYB)
@@ -105,3 +109,5 @@ c03-dadi-devenv003 10.180.7.4  营销  票券
 http://rap.tech.nanhaicorp.com/org/index.do
 
 
+大地测试环境 服务器 10.180.6.228：2222    票券服务  10.180.7.34:2602
+c03-dadi-testenv003
