@@ -1,6 +1,6 @@
 package com.wzh.tools.demo.test;
 
-public class Digui {
+public class Recursive {
     public static void main(String[] args) {
         add(1);
         System.out.println(add(1));
