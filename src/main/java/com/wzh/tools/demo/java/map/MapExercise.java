@@ -15,8 +15,8 @@ import java.util.stream.Collectors;
 
 public class MapExercise {
     public static void main(String[] args) {
-//        forEachMap();
-        treeMap();
+        forEachMap();
+//        treeMap();
     }
 
     private static void forEachMap() {
