@@ -19,7 +19,7 @@ public class SplitListUtils {
         if (n <= 0) {
             n = 1;
         }
-        List<List<T>> result = new ArrayList<List<T>>();
+        List<List<T>> result = new ArrayList<>();
         //(先计算出余数)
         int remaider = source.size() % n;
         //然后是商
