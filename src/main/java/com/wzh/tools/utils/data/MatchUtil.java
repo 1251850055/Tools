@@ -6,7 +6,7 @@ package com.wzh.tools.utils.data;
  * @Date: 2020/4/20 19:27
  */
 
-public class matchUtil {
+public class MatchUtil {
     public static void main(String[] args) {
         //要比较的两个字符串
         String str1 = "今天星期四";
@@ -15,7 +15,7 @@ public class matchUtil {
         System.out.println(integer);
     }
 
-    private static Integer matchValue(String str1, String str2) {
+    public static Integer matchValue(String str1, String str2) {
         //计算两个字符串的长度。
         int len1 = str1.length();
         int len2 = str2.length();
