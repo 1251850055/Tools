@@ -1,4 +1,4 @@
-package com.wzh.tools.demo.java.designpatterns;
+package com.wzh.tools.demo.java.designpatterns.single;
 
 /**
  * @Description:
@@ -20,16 +20,16 @@ package com.wzh.tools.demo.java.designpatterns;
  * 如何解决：判断系统是否已经有这个单例，如果有则返回，如果没有则创建。
  * 关键代码：构造函数是私有的。
  */
-public class Single {
+public class SingleDemo {
     //创建一个single的一个对象
-    private static Single single = new Single();
+    private static SingleDemo single = new SingleDemo();
 
     //构造函数私有，该类不能被实例化
-    private Single() {
+    private SingleDemo() {
     }
 
     //获取一个可用的对象
-    public static Single getInstance() {
+    public static SingleDemo getInstance() {
         return single;
     }
 

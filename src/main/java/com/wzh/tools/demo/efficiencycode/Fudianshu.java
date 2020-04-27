@@ -7,6 +7,11 @@ package com.wzh.tools.demo.efficiencycode;
 
 public class Fudianshu {
 
+    /**
+     * 浮点数
+     * @param args
+     */
+
     public static void main(String[] args) {
 
         float a = 0.9f;

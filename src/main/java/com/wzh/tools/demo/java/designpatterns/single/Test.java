@@ -1,4 +1,4 @@
-package com.wzh.tools.demo.java.designpatterns;
+package com.wzh.tools.demo.java.designpatterns.single;
 
 /**
  * @Description:
@@ -8,7 +8,8 @@ package com.wzh.tools.demo.java.designpatterns;
 
 public class Test {
     public static void main(String[] args) {
-        Single instance = Single.getInstance();
+        //测试单利
+        SingleDemo instance = SingleDemo.getInstance();
         instance.showMessage();
     }
 }
