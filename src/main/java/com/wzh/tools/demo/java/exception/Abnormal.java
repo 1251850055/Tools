@@ -12,7 +12,7 @@ import java.io.StringWriter;
 public class Abnormal {
     public static void main(String[] args) {
         try {
-            Boolean a = true;
+            boolean a = true;
             if (a) {
                 throw new RuntimeException("手动抛异常创建失败");
             } else {
