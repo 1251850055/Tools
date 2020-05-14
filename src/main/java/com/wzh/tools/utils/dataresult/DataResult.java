@@ -102,7 +102,7 @@ public class DataResult<T> extends BaseResult implements Serializable {
 
     public DataResult<T> addAttachment(String key, Object value) {
         if (attachment == null) {
-            this.attachment = new HashMap<String, Object>(16);
+            this.attachment = new HashMap<>(16);
         }
         this.attachment.put(key, value);
         return this;
