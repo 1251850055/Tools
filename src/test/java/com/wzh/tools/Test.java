@@ -1,17 +1,15 @@
 package com.wzh.tools;
 
-import org.apache.commons.lang.StringUtils;
-
 /**
  * @Description:
  * @Author: wangzehui
- * @Date: 2020/4/26 9:38
+ * @Date: 2020/5/28 16:02
  */
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println((int)((Math.random() * 899999) + 100000));
+        long faceId = 797894127L;
+        System.out.println(Long.toBinaryString(faceId));
 
-        System.out.println(StringUtils.isNotBlank("123"));
     }
 }
