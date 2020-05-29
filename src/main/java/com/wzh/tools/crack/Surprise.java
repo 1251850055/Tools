@@ -1,4 +1,4 @@
-package com.wzh.tools.Crack;
+package com.wzh.tools.crack;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
