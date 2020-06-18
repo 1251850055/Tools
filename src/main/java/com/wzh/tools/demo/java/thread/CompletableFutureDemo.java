@@ -66,9 +66,9 @@ public class CompletableFutureDemo {
         // 封装后无返回值，必须自己whenComplete()获取
         CompletableFuture.allOf(cfs).join();
 
-//        for (Integer i : taskList) {
-//            list.add(calc(i).toString());
-//        }
+        for (Integer i : taskList) {
+            list.add(calc(i).toString());
+        }
         System.out.println("list=" + list + ",耗时=" + (System.currentTimeMillis() - start));
     }
 
