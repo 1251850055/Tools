@@ -26,8 +26,9 @@ public class RunnableDemo implements Runnable{
             }
         }catch (InterruptedException e) {
             System.out.println("Thread " +  threadName + " interrupted.");
+        }finally {
+            System.out.println("Thread " +  threadName + " exiting.");
         }
-        System.out.println("Thread " +  threadName + " exiting.");
     }
 
     public void start () {

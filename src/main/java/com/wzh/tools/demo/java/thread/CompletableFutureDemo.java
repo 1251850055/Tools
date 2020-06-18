@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 public class CompletableFutureDemo {
 
     public static void main(String[] args) {
-        Long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         // 结果集
         List<String> list = new ArrayList<>();
 
