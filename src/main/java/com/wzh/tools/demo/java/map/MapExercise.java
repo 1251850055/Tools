@@ -3,6 +3,7 @@ package com.wzh.tools.demo.java.map;
 import com.alibaba.fastjson.JSONObject;
 import com.wzh.tools.demo.java.entity.GroupPeople;
 import com.wzh.tools.demo.java.entity.People;
+import org.apache.commons.collections.CollectionUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -15,10 +16,42 @@ import java.util.stream.Collectors;
 
 public class MapExercise {
     public static void main(String[] args) {
-        forEachMap();
+//        forEachMap();
 //        treeMap();
+        forEachMapOld();
     }
 
+    /**
+     * Java 7 forEachMap
+     */
+    private static void forEachMapOld() {
+        List<People> peopleResult = addList();
+        HashMap<Integer, List<People>> map = new HashMap<>(16);
+        if (CollectionUtils.isNotEmpty(peopleResult)) {
+            for (People people : peopleResult) {
+                if (null != people.getGroupId()) {
+                    List<People> peopleList = map.get(people.getGroupId());
+                    if (CollectionUtils.isEmpty(peopleList)) {
+                        peopleList = new ArrayList<>();
+                        peopleList.add(people);
+                        map.put(people.getGroupId(), peopleList);
+                    } else {
+                        peopleList.add(people);
+                    }
+                }
+            }
+        }
+        for (Map.Entry<Integer, List<People>> groupMap : map.entrySet()) {
+            Integer key = groupMap.getKey();
+            List<People> people = map.get(key);
+            System.out.println(JSONObject.toJSONString(people));
+        }
+    }
+
+
+    /**
+     * Java 8 forEachMap
+     */
     private static void forEachMap() {
         List<People> peopleResult = addList();
 
