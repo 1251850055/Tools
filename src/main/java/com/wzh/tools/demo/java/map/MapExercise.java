@@ -17,8 +17,8 @@ import java.util.stream.Collectors;
 public class MapExercise {
     public static void main(String[] args) {
 //        forEachMap();
-//        treeMap();
-        forEachMapOld();
+        treeMap();
+//        forEachMapOld();
     }
 
     /**
@@ -138,8 +138,8 @@ public class MapExercise {
          */
         Map<String, String> map = new TreeMap<>();
         map.put("1", "a");
-        map.put("2", "b");
-        map.put("3", "c");
+        map.put("3", "b");
+        map.put("2", "c");
 
         System.out.println("通过Map.entrySet遍历key和value");
         for (Map.Entry<String, String> entry : map.entrySet()) {
