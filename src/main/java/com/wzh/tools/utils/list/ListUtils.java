@@ -8,7 +8,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Date: 2019/5/27 17:17
+ * @Description wangzehui
+ * @Date 2020/7/1 13:48
  */
 
 public class ListUtils {
@@ -17,18 +18,17 @@ public class ListUtils {
      * list元素的属性可以是数字（byte、short、int、long、float、double等，支持正数、负数、0）、char、String、java.util.Date
      *
      * @param list
-     * @param sortnameArr list元素的属性名称
+     * @param sortNameArr list元素的属性名称
      * @param isAsc       true升序，false降序
      */
-    public static <E> void sort(List<E> list, final boolean isAsc, final String... sortnameArr) {
+    public static <E> void sort(List<E> list, final boolean isAsc, final String... sortNameArr) {
         Collections.sort(list, new Comparator<E>() {
-
             @Override
             public int compare(E a, E b) {
                 int ret = 0;
                 try {
-                    for (int i = 0; i < sortnameArr.length; i++) {
-                        ret = ListUtils.compareObject(sortnameArr[i], isAsc, a, b);
+                    for (int i = 0; i < sortNameArr.length; i++) {
+                        ret = ListUtils.compareObject(sortNameArr[i], isAsc, a, b);
                         if (0 != ret) {
                             break;
                         }
@@ -45,12 +45,12 @@ public class ListUtils {
      * 给list的每个属性都指定是升序还是降序
      *
      * @param list
-     * @param sortnameArr 参数数组
+     * @param sortNameArr 参数数组
      * @param typeArr     每个属性对应的升降序数组， true升序，false降序
      */
 
-    public static <E> void sort(List<E> list, final String[] sortnameArr, final boolean[] typeArr) {
-        if (sortnameArr.length != typeArr.length) {
+    public static <E> void sort(List<E> list, final String[] sortNameArr, final boolean[] typeArr) {
+        if (sortNameArr.length != typeArr.length) {
             throw new RuntimeException("属性数组元素个数和升降序数组元素个数不相等");
         }
         Collections.sort(list, new Comparator<E>() {
@@ -58,8 +58,8 @@ public class ListUtils {
             public int compare(E a, E b) {
                 int ret = 0;
                 try {
-                    for (int i = 0; i < sortnameArr.length; i++) {
-                        ret = ListUtils.compareObject(sortnameArr[i], typeArr[i], a, b);
+                    for (int i = 0; i < sortNameArr.length; i++) {
+                        ret = ListUtils.compareObject(sortNameArr[i], typeArr[i], a, b);
                         if (0 != ret) {
                             break;
                         }
@@ -75,17 +75,17 @@ public class ListUtils {
     /**
      * 对2个对象按照指定属性名称进行排序
      *
-     * @param sortname 属性名称
+     * @param sortName 属性名称
      * @param isAsc    true升序，false降序
      * @param a
      * @param b
      * @return
      * @throws Exception
      */
-    private static <E> int compareObject(final String sortname, final boolean isAsc, E a, E b) throws Exception {
+    private static <E> int compareObject(final String sortName, final boolean isAsc, E a, E b) throws Exception {
         int ret;
-        Object value1 = ListUtils.forceGetFieldValue(a, sortname);
-        Object value2 = ListUtils.forceGetFieldValue(b, sortname);
+        Object value1 = ListUtils.forceGetFieldValue(a, sortName);
+        Object value2 = ListUtils.forceGetFieldValue(b, sortName);
         String str1 = value1.toString();
         String str2 = value2.toString();
         if (value1 instanceof Number && value2 instanceof Number) {
