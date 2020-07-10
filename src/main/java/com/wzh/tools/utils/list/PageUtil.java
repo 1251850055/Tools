@@ -3,8 +3,18 @@ package com.wzh.tools.utils.list;
 import java.util.List;
 
 /**
- * @Description
- * @Date 2020/2/11 13:48
+* @Description
+*
+* //总记录数
+* int totalRows = result.size();
+* //总页数
+* int pageCount = totalRows % pageView.getPageSize() == 0 ? totalRows / pageView.getPageSize() : totalRows / pageView.getPageSize() + 1;
+* pageView.setRowCount(totalRows);
+* pageView.setPageCount(pageCount);
+* //切割list 手动分页
+* List<ReviewAndPrepare> reviewAndPrepares = PageUtil.startPage(result, pageView.getPageNow(), pageView.getPageSize());
+* pageView.setRecords(reviewAndPrepares);
+* @Date 2020/2/11 13:48
  */
 public class PageUtil {
     /**
