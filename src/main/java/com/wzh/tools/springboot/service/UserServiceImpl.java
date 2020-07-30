@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public DataResult<PageEntity<List<UserData>>> getUserList(UserParam userParam) {
+    public DataResult getUserList(UserParam userParam) {
         List<UserData> listData = new ArrayList<>();
         //分页
         PageHelper.startPage(userParam.getCurrentPage(), userParam.getRows());
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
                 userData.setUserPhone(userDataInfo.getUserPhone());
                 listData.add(userData);
             });
-            return DataResult.success(new PageEntity(userParam.getCurrentPage(), userParam.getRows(), (int) pageInfo.getTotal(), listData));
+            return DataResult.success(new PageEntity<>(userParam.getCurrentPage(), userParam.getRows(), (int) pageInfo.getTotal(), listData));
         } catch (Exception e) {
             return DataResult.failed(-1, "查询用户列表失败");
         }

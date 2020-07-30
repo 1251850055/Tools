@@ -5,15 +5,12 @@ import com.wzh.tools.springboot.domain.request.UserParam;
 import com.wzh.tools.springboot.domain.response.UserData;
 import com.wzh.tools.springboot.service.UserService;
 import com.wzh.tools.utils.dataresult.DataResult;
-import com.wzh.tools.utils.dataresult.PageEntity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @Description:
@@ -50,7 +47,7 @@ public class UserController {
      * 根据手机号 查询用户列表
      */
     @RequestMapping(value = "/getUserList", method = RequestMethod.POST)
-    public DataResult<PageEntity<List<UserData>>> getUserList(@RequestBody UserParam userParam) {
+    public DataResult getUserList(@RequestBody UserParam userParam) {
         Preconditions.checkNotNull(userParam.getUserPhone(), "用户手机号不能为空");
         return userService.getUserList(userParam);
     }
