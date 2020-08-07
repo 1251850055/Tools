@@ -16,7 +16,7 @@ public class DateUtil {
      *             返回计算那天的00 和 23:59:59秒
      */
     public static List<Date> getDayStartAndEnd(Date curr, int day) {
-        List<Date> dates = new ArrayList<Date>();
+        List<Date> dates = new ArrayList<>();
         //第一个
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(curr);
