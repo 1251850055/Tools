@@ -1,8 +1,9 @@
 package com.wzh.tools;
 
-import java.math.BigDecimal;
-
-import static java.math.BigDecimal.ZERO;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @Description:
@@ -11,22 +12,25 @@ import static java.math.BigDecimal.ZERO;
  */
 
 public class Test {
-    public static void main(String[] args) {
-        String s = computeA(0, 3);
-        System.out.println(s);
-    }
 
-    public static String computeA(int a, int b) {
-        if (0 != a && 0 != b) {
-            BigDecimal num = new BigDecimal((float) a / b).setScale(4, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
-            if (num.compareTo(ZERO) <= 0) {
-                num = ZERO;
-            }
-            String str = num.stripTrailingZeros().toPlainString();
-            return str + "%";
-        } else {
-            return "0.00%";
+    public static final String pattern = "M-dd";
+
+    public static void main(String[] args) {
+
+        try {
+            Date date = new Date();
+            DateFormat df1 = DateFormat.getDateInstance();//日期格式，精确到日
+            System.out.println(df1.format(date));
+
+            SimpleDateFormat df = new SimpleDateFormat(pattern);
+            String format = df.format(date);
+
+            Date parse = df.parse(df1.format(date));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+
     }
 
 

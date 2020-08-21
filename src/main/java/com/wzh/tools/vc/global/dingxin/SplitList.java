@@ -19,7 +19,7 @@ public class SplitList implements Serializable {
         for (int i = 1; i < 10; i++) {
             integers.add(i);
         }
-        List<List<Integer>> lists = averageAssign(integers, integers.size() / 999 + 1);
+        List<List<Integer>> lists = averageAssign(integers, integers.size() / 9 + 1);
         System.out.println(integers.size() / 999 + 1);
         System.out.println(lists);
 

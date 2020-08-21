@@ -4,6 +4,7 @@ package com.wzh.tools.springboot.service;
 import com.wzh.tools.springboot.domain.request.UserParam;
 import com.wzh.tools.springboot.domain.response.UserData;
 import com.wzh.tools.utils.dataresult.DataResult;
+import com.wzh.tools.utils.dataresult.PageEntity;
 
 /**
  * @Description:
@@ -25,5 +26,5 @@ public interface UserService {
      * @param userParam
      * @return
      */
-    DataResult getUserList(UserParam userParam);
+    DataResult<PageEntity<UserData>> getUserList(UserParam userParam);
 }

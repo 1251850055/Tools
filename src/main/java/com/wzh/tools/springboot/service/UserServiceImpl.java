@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public DataResult getUserList(UserParam userParam) {
+    public DataResult<PageEntity<UserData>> getUserList(UserParam userParam) {
         List<UserData> listData = new ArrayList<>();
         //分页
         PageHelper.startPage(userParam.getCurrentPage(), userParam.getRows());
