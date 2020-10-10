@@ -1,5 +1,7 @@
 package com.wzh.tools;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * @Description:
  * @Author: wangzehui
@@ -7,7 +9,19 @@ package com.wzh.tools;
  */
 
 public class Test {
+
     public static void main(String[] args) {
-        System.out.println(Double.valueOf("0.0"));
+        String s = "{\"bookId\":437,\"courseId\":\"02\",\"errorNum\":1,\"studentId\":386,\"type\":2}";
+
+        JSONObject jsonObject = JSONObject.parseObject(s);
+
+
+        String bookId = jsonObject.get("bookId").toString();
+
+        System.out.println(bookId);
+
+
     }
+
+
 }

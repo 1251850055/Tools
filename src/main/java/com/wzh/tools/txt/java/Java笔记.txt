@@ -49,3 +49,7 @@ String uuid = UUID.randomUUID().toString().replace("-", "").toLowerCase();UUID�
 UNIQUE 约束：唯一标识数据库表中的每条记录。UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。
 （每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束）
 (4)key 是数据库的物理结构，它包含两层意义和作用，一是约束（偏重于约束和规范数据库的结构完整性），二是索引（辅助查询用的）。
+
+
+
+
