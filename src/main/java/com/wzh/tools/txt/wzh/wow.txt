@@ -1,0 +1,8 @@
+射击宏
+#showtooltips
+/cast [worn:弩]弩射击;[worn:弓]弓射击;[worn:枪械]枪械射击;[worn:投掷武器]投掷
+/eq [worn:弩/弓]瑟银之箭;[worn:枪械]精准弹丸
+
+骑士宏
+https://bbs.nga.cn/read.php?tid=19898040&_fp=3
+
