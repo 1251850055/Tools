@@ -9,6 +9,10 @@ import java.text.DecimalFormat;
  */
 
 public class BigDecimalExercise {
+
+    private static final BigDecimal ZERO = BigDecimal.ZERO;
+
+
     public static void main(String[] args) {
         modularOperation();
     }
@@ -44,6 +48,20 @@ public class BigDecimalExercise {
         //取绝对值
         System.out.println("取绝对值:" + Math.abs(i));
         System.out.println("取绝对值:" + Math.abs(v));
+    }
+
+
+    /**
+     * 和0做校验并且末尾舍弃多余0
+     *
+     * @param price
+     * @return
+     */
+    private String checkZero(BigDecimal price) {
+        if (price.compareTo(ZERO) <= 0) {
+            price = ZERO;
+        }
+        return price.stripTrailingZeros().toPlainString();
     }
 }
 
