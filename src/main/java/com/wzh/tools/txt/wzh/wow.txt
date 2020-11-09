@@ -14,8 +14,6 @@ https://bbs.nga.cn/read.php?tid=19898040&_fp=3
 80：naxx,冰冠堡垒
 
 
-幽灵狼-托尔巴拉德
-https://baijiahao.baidu.com/s?id=1634585622819022051&wfr=spider&for=pc
 
 幻化牛
 https://jingyan.baidu.com/article/870c6fc3483932b03fe4be37.html
@@ -36,14 +34,7 @@ https://jingyan.baidu.com/article/870c6fc3483932b03fe4be37.html
 
 
 #showtooltips
-/cast [help]神圣震击;[harm]审判
+/cast [help]牺牲祝福;[harm]清算之手
 
 
 
-通用的
-#showtooltip
-/cancelaura 保护祝福
-/cast 保护祝福
-按一下是保护，再按一下是取消自己身上的保护效果，释放死疽周防骑秒消死疽
-
-https://bbs.nga.cn/read.php?&tid=20213720
