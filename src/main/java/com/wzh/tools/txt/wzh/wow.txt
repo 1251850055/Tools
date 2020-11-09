@@ -6,3 +6,44 @@
 骑士宏
 https://bbs.nga.cn/read.php?tid=19898040&_fp=3
 
+夕暮丶星空
+
+正式服团本
+60：风剑，T2
+70：凤凰，蛋刀，橙弓，乌鸦，白鸡，蛋盾
+80：naxx,冰冠堡垒
+
+
+幽灵狼-托尔巴拉德
+https://baijiahao.baidu.com/s?id=1634585622819022051&wfr=spider&for=pc
+
+幻化牛
+https://jingyan.baidu.com/article/870c6fc3483932b03fe4be37.html
+
+
+
+
+圣骑士
+
+审判
+#showtooltip 审判
+/castsequence审判,愤怒之锤
+
+
+注释：目标是敌人就嘲讽，目标是友方就牺牲，省一个键位
+#showtooltip
+/cast [help]牺牲祝福;清算之手
+
+
+#showtooltips
+/cast [help]神圣震击;[harm]审判
+
+
+
+通用的
+#showtooltip
+/cancelaura 保护祝福
+/cast 保护祝福
+按一下是保护，再按一下是取消自己身上的保护效果，释放死疽周防骑秒消死疽
+
+https://bbs.nga.cn/read.php?&tid=20213720
