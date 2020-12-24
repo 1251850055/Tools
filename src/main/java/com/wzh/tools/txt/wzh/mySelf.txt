@@ -4,13 +4,16 @@
 #showtooltip xx
 /cast [@cursor] xx
 
+
 脚下区域技能释放
 #showtooltip xx
 /cast [@player]xx
 
+
 目标的目标释放技能
 #showtooltip xx
 /cast [@targettarget]xx
+
 
 焦点打断宏
 #showtooltip xx
@@ -21,7 +24,6 @@
 #showtooltip xx
 /cast [@target,help]xx
 /cast [@target,harm]xx
-
 
 
 抓贼宏
@@ -37,10 +39,12 @@
 /cancelAura 寒冰屏障
 /cast 寒冰屏障
 
+
 冰枪 (注释：冰枪扫图宏 - 有鼠标指向优先冰枪指向目标，无指向自动冰枪附近目标)
 #showtooltips 冰枪术
 /startattack
 /cast [@mouseover,exists,harm,nodead]  [@target,exists,harm,nodead] [] 冰枪术
+
 
 骑士锤子
 #showtooltip
@@ -48,10 +52,12 @@
 /cast [@target,harm]愤怒之锤
 /cast 愤怒之锤
 
+
 #showtooltip
 /cast [@mouseover,harm]审判
 /cast [@target,harm]审判
 /cast 审判
+
 
 DK-吸血鬼提示倒计时
 #showtooltip 吸血鬼之血
@@ -86,6 +92,7 @@ DK-吸血鬼提示倒计时
 #showtooltip 回春术
 /cast [@mouseover,help][help,nodead][@targettarget,help,nodead][]回春术
 
+
 #showtooltip 纠缠根须
 /stopattack
 /cast [@mouseover,harm][]纠缠根须
@@ -94,6 +101,7 @@ DK-吸血鬼提示倒计时
 /use [nostealth,mod:alt,@player]回春术
 /cast [mod:alt]!潜行
 /cast [nomod,nostance]!猎豹形态
+
 
 猫德 非战斗中在室外旅行形态，室内豹形态、战斗中不是豹形态直接变豹子，是豹形态施放愈合且不变形
 /cast [combat,nostance:2]猎豹形态(变形)
@@ -104,5 +112,9 @@ DK-吸血鬼提示倒计时
 /cast 愈合
 /console autounshift
 
+
 任何地方查看低保
 /run LoadAddOn("Blizzard_WeeklyRewards"); WeeklyRewardsFrame:Show()
+
+
+猎人暴击-精通
