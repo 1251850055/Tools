@@ -1,0 +1,27 @@
+鼠标指向区域技能释放
+#showtooltip xx
+/cast [@cursor] xx
+
+
+脚下区域技能释放
+#showtooltip xx
+/cast [@player]xx
+
+
+目标的目标释放技能
+#showtooltip xx
+/cast [@targettarget]xx
+
+
+焦点打断宏
+#showtooltip xx
+/cast [@mouseover,harm,nodead,exists] [@focus,harm,nodead,exists][]xx
+
+
+当前目标敌方释放xx,友方释放xx
+#showtooltip xx
+/cast [@target,help]xx
+/cast [@target,harm]xx
+
+任何地方查看低保
+/run LoadAddOn("Blizzard_WeeklyRewards"); WeeklyRewardsFrame:Show()

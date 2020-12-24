@@ -1,0 +1,17 @@
+射击猎属性主精通、副暴击
+
+#showtooltip 误导
+/施放 [@mouseover,help] [@target,help] [@targettarget,help] [@focus,help] [@pet] []误导
+
+反制射击
+#showtooltip 反制射击
+/stopcasting
+/stopcasting
+/cast [mod:alt,@focus,harm]反制射击; [@mouseover,harm] 反制射击; [@target,harm] 反制射击
+
+
+召唤/治疗/复活宠物复合宏
+#showtooltips
+/cast [@pet,dead] 复活宠物
+/castsequence [nopet] reset=3 召唤宠物 1,复活宠物
+/cast 治疗宠物
