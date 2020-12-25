@@ -3,6 +3,9 @@
 /cast [@target,harm]愤怒之锤
 /cast 愤怒之锤
 
+奶骑:
+#showtooltip 十字军打击
+/cast [@target,harm] [@targettarget,harm] [@targettargettarget,harm]十字军打击
 
 #showtooltip
 /cast [@mouseover,harm]审判

@@ -1,0 +1,28 @@
+package com.wzh.tools.utils.string;
+
+import java.math.BigDecimal;
+
+/**
+ * @Description: 指定字符串下标插入元素
+ * @Author: wangzehui
+ * @Date: 2020/12/24 15:37
+ */
+
+public class StrUtils {
+
+    public static final String SPACE = "&#13";
+
+    public static final int LENGTH = 12;
+
+    public static String InsertStr(String str) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        BigDecimal num = new BigDecimal(str.length()).divide(new BigDecimal(LENGTH), 0, BigDecimal.ROUND_FLOOR);
+        if (num.compareTo(BigDecimal.ZERO) > 0) {
+            for (int i = 1; i <= num.intValue(); i++) {
+                sb.insert(i * LENGTH, SPACE);
+            }
+        }
+        return sb.toString();
+    }
+}
