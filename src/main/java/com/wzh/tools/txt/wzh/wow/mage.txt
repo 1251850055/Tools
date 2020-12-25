@@ -9,3 +9,7 @@
 #showtooltips 冰枪术
 /startattack
 /cast [@mouseover,exists,harm,nodead]  [@target,exists,harm,nodead] [] 冰枪术
+
+
+#showtooltips
+/cast [@cursor,spec:2] 烈焰风暴; [@cursor,spec:3] 暴风雪
