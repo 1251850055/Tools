@@ -25,3 +25,6 @@
 
 任何地方查看低保
 /run LoadAddOn("Blizzard_WeeklyRewards"); WeeklyRewardsFrame:Show()
+
+离开队伍宏
+/run C_PartyInfo.LeaveParty()
