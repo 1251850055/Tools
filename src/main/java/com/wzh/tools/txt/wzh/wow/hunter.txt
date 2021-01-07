@@ -11,15 +11,8 @@
 /cast [target=targettarget, help]误导
 /cast [target=pet, nodead, exists]误导
 
-
-反制射击
 #showtooltip 反制射击
-/stopcasting
-/stopcasting
-/Y 我已打断%t,CD24秒,下一位接上
-/cast [mod:alt,@focus,harm]反制射击; [@mouseover,harm] 反制射击; [@target,harm] 反制射击
-
-
+/cast [@mouseover,harm,nodead,exists] [@focus,harm,nodead,exists][]反制射击
 
 没宠物召唤宠物1,宠物死亡复活,宠物未死亡治疗
 #showtooltips 宝宝
