@@ -9,3 +9,7 @@ DK-吸血鬼提示倒计时
 /in 7 /y 2
 /in 8  /y 1
 /in 9 /y 吸血鬼结束
+
+
+#showtooltip 寒冰锁链
+/cast [@focus,harm,modifier:shift]寒冰锁链; [@mouseover,harm]寒冰锁链; 寒冰锁链

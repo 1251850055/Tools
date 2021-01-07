@@ -12,6 +12,9 @@
 /cast [@target,harm]审判
 /cast 审判
 
+#showtooltip 清算之手
+/cast [@targettarget,help]牺牲祝福
+/cast [@target,harm]清算之手
 
 #showtooltip 复仇者之盾
 /focus target
@@ -21,3 +24,10 @@
 /target focus
 /clear focus
 /startattack
+
+
+#showtooltip 复仇者之盾
+/cast [@mouseover,harm]复仇者之盾
+/cast [@target,harm]复仇者之盾
+/cast 复仇者之盾
+
