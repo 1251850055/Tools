@@ -28,3 +28,6 @@
 
 离开队伍宏
 /run C_PartyInfo.LeaveParty()
+
+
+
