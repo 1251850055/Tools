@@ -14,6 +14,9 @@ public class Test {
         String str = "123456789啊啊0啊啊啊aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         String s = StrUtils.InsertStr(str);
         System.out.println(s);
+
+
+
     }
 
 
