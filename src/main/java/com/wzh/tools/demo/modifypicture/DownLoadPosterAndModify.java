@@ -1,4 +1,4 @@
-package com.wzh.tools.demo.modifythepicturesize;
+package com.wzh.tools.demo.modifypicture;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,7 +15,6 @@ public class DownLoadPosterAndModify {
     //文件名字
     static String fileName = "测试";
     static String hipiaoFileName = "哈票影片图片3";
-
 
     public static void main(String[] args) throws IOException {
         //图片网络地址

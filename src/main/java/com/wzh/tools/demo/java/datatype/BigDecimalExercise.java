@@ -12,7 +12,6 @@ public class BigDecimalExercise {
 
     private static final BigDecimal ZERO = BigDecimal.ZERO;
 
-
     public static void main(String[] args) {
         modularOperation();
     }

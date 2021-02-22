@@ -112,7 +112,7 @@ public class ListExercise {
     }
 
 
-    private static List<People> addList() {
+    public static List<People> addList() {
         List<People> peopleList = new ArrayList<>();
         People people1 = new People();
         people1.setId(1);

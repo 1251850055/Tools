@@ -6,15 +6,14 @@ package com.wzh.tools.demo.efficiencycode;
  * @Date: 2019/4/22 10:15
  */
 
-public class Test {
+public class TestBoolean {
 
     private static Boolean valueOf(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }
 
-
     public static void main(String[] args) {
-        Boolean aBoolean = Test.valueOf(false);
+        Boolean aBoolean = TestBoolean.valueOf(false);
         System.out.println(aBoolean);
     }
 

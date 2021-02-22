@@ -33,6 +33,13 @@ public class Obj {
         System.out.println(str1 == str2);
 
 
+        System.out.println("----------------------------------------------------------");
+        String a = "1";
+        String b = "1";
+        System.out.println(a.equals(b));
+        System.out.println(a == b);
+        System.out.println("a" + a.hashCode());
+        System.out.println("b" + b.hashCode());
 
 
     }

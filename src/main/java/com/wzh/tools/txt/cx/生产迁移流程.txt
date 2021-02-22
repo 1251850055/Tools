@@ -51,4 +51,4 @@ wangzehui
 EmyGUlofzzeYB7zQ
 
 /data/www/pipeline
- c02-coupon-biz001  在这台机器上运行
+c02-coupon-biz001  在这台机器上运行

@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @Description:
+ * @Description: 抓取干货集中营图片
  * @Author: wangzehui
  * @Date: 2020/4/28 13:41
  */

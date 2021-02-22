@@ -578,4 +578,18 @@ public class DateUtil {
         toCalendar.set(Calendar.MILLISECOND, 0);
         return (toCalendar.getTime().getTime() - fromCalendar.getTime().getTime()) / (1000 * 60 * 60 * 24);
     }
+
+    /**
+     * 当前日期加上天数后的日期
+     *
+     * @param days 为增加的天数
+     * @throws ParseException
+     */
+    public static Date plusDays(int days) {
+        Date d = new Date();
+        Calendar ca = Calendar.getInstance();
+        ca.add(Calendar.DATE, days);// num为增加的天数，可以改变的
+        d = ca.getTime();
+        return d;
+    }
 }

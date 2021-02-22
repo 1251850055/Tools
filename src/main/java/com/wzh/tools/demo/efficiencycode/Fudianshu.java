@@ -9,6 +9,7 @@ public class Fudianshu {
 
     /**
      * 浮点数
+     *
      * @param args
      */
 
@@ -24,6 +25,6 @@ public class Fudianshu {
         double f = d - e;
         System.out.println(f);
 
-        System.out.println("1"+"2");
+        System.out.println("1" + "2");
     }
 }

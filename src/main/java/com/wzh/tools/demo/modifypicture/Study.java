@@ -1,4 +1,4 @@
-package com.wzh.tools.demo.modifythepicturesize;
+package com.wzh.tools.demo.modifypicture;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;

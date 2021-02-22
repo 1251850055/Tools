@@ -1,6 +1,10 @@
 package com.wzh.tools.demo.java.list;
 
-import java.util.*;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -44,7 +48,7 @@ public class Java8Tester {
         System.out.println("随机数: ");
 
         // 输出10个随机数
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
 
         for (int i = 0; i < 10; i++) {
             System.out.println(random.nextInt());

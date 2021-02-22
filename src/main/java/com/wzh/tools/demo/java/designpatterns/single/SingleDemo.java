@@ -28,6 +28,7 @@ public class SingleDemo {
     private SingleDemo() {
     }
 
+
     //获取一个可用的对象
     public static SingleDemo getInstance() {
         return single;

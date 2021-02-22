@@ -1,4 +1,4 @@
-package com.wzh.tools.demo.modifythepicturesize;
+package com.wzh.tools.demo.modifypicture;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

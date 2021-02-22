@@ -8,7 +8,7 @@ package com.wzh.tools.demo.java.datatype;
 public class DoubleExercise {
     public static void main(String[] args) {
         double m = 1.01;
-        double n = 365*1;
+        double n = 365 * 1;
         /**
          * m的n次幂
          */
@@ -20,7 +20,6 @@ public class DoubleExercise {
         long l = pow.longValue();
 
         System.out.println(l);
-
 
 
     }
