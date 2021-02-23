@@ -10,6 +10,10 @@ import java.util.Map;
  */
 
 public class TwoSum {
+    private static int[] nums = {2, 6, 7, 4, 10, 8};
+
+    private static int target = 8;
+
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -23,12 +27,19 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2, 6, 7, 4, 10, 8};
-        int target = 8;
         int[] ints = twoSum(nums, target);
         for (int anInt : ints) {
             System.out.println(anInt);
         }
+
+//        List<Integer> integers = new ArrayList<>();
+//        for (int i = 0; i < nums.length - 1; i++) {
+//            if (nums[i] + nums[i + 1] == target) {
+//                integers.add(i);
+//                integers.add(i + 1);
+//            }
+//        }
+//        System.out.println(JSONObject.toJSONString(integers));
 
     }
 
