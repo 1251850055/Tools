@@ -113,7 +113,7 @@ public class Java8Tester {
     }
 
     private static List<String> deleteEmptyStringsUsingJava7(List<String> strings) {
-        List<String> filteredList = new ArrayList<String>();
+        List<String> filteredList = new ArrayList<>();
 
         for (String string : strings) {
 
@@ -139,10 +139,10 @@ public class Java8Tester {
     }
 
     private static List<Integer> getSquares(List<Integer> numbers) {
-        List<Integer> squaresList = new ArrayList<Integer>();
+        List<Integer> squaresList = new ArrayList<>();
 
         for (Integer number : numbers) {
-            Integer square = new Integer(number.intValue() * number.intValue());
+            Integer square = number * number;
 
             if (!squaresList.contains(square)) {
                 squaresList.add(square);
@@ -158,8 +158,8 @@ public class Java8Tester {
 
             Integer number = numbers.get(i);
 
-            if (number.intValue() > max) {
-                max = number.intValue();
+            if (number > max) {
+                max = number;
             }
         }
         return max;
@@ -171,8 +171,8 @@ public class Java8Tester {
         for (int i = 1; i < numbers.size(); i++) {
             Integer number = numbers.get(i);
 
-            if (number.intValue() < min) {
-                min = number.intValue();
+            if (number < min) {
+                min = number;
             }
         }
         return min;
