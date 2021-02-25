@@ -1,7 +1,6 @@
 package com.wzh.tools;
 
 /**
- * @Description:
  * @Author: wangzehui
  * @Date: 2020/9/5 10:59
  */
@@ -9,5 +8,9 @@ package com.wzh.tools;
 public class Test {
 
 
+    public static void main(String[] args) {
+
+
+    }
 
 }
