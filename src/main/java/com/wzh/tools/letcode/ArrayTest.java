@@ -1,6 +1,10 @@
 package com.wzh.tools.letcode;
 
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Description:
@@ -11,7 +15,8 @@ import java.util.Arrays;
 public class ArrayTest {
 
     public static void main(String[] args) {
-
+        List<Boolean> booleans = kidsWithCandies();
+        System.out.println(JSONObject.toJSONString(booleans));
     }
 
 
@@ -40,6 +45,7 @@ public class ArrayTest {
      * 客户的 资产总量 就是他们在各家银行托管的资产数量之和。最富有客户就是 资产总量 最大的客户。
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/richest-customer-wealth
+     *
      * @return
      */
     public static int maximumWealth() {
@@ -62,5 +68,25 @@ public class ArrayTest {
         System.out.println(integer);
 
         return max;
+    }
+
+    /**
+     * 给你一个数组 candies 和一个整数 extraCandies ，其中 candies[i] 代表第 i 个孩子拥有的糖果数目。
+     * 对每一个孩子，检查是否存在一种方案，将额外的 extraCandies 个糖果分配给孩子们之后，此孩子有 最多 的糖果。注意，允许有多个孩子同时拥有 最多 的糖果数目。
+     */
+    public static List<Boolean> kidsWithCandies() {
+        int[] candies = {2, 3, 5, 1, 3};
+        int extraCandies = 3;
+        int max = 0;
+        List<Boolean> booleans = new ArrayList<>();
+        for (int candy : candies) {
+            if (candy > max) {
+                max = candy;
+            }
+        }
+        for (int candy : candies) {
+            booleans.add(candy + extraCandies >= max);
+        }
+        return booleans;
     }
 }
