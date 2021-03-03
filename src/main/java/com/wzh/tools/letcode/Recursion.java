@@ -1,7 +1,7 @@
 package com.wzh.tools.letcode;
 
 /**
- * @Description: 求和1-100 地柜
+ * @Description: 求和1-100 递归
  * @Author: wangzehui
  * @Date: 2021/2/22 14:27
  */
