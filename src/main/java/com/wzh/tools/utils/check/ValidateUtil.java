@@ -1,5 +1,6 @@
 package com.wzh.tools.utils.check;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.FatalBeanException;
@@ -45,8 +46,8 @@ public class ValidateUtil {
                 }
             }
         }
-        if (errList.size() > 0) {
-            StringBuffer errMsg = new StringBuffer();
+        if (CollectionUtils.isNotEmpty(errList)) {
+            StringBuilder errMsg = new StringBuilder();
             for (String err : errList) {
                 errMsg.append(err);
                 errMsg.append("\n");

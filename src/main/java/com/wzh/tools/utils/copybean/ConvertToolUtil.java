@@ -41,11 +41,9 @@ public class ConvertToolUtil {
         Method fromMethod = null, toMethod = null;
         String fromMethodName = null, toMethodName = null;
 
-        for (int i = 0; i < fromMethods.length; i++) {
-
-            fromMethod = fromMethods[i];
+        for (Method method : fromMethods) {
+            fromMethod = method;
             fromMethodName = fromMethod.getName();
-
             if (!fromMethodName.contains("get")) {
                 continue;
             }
@@ -62,7 +60,7 @@ public class ConvertToolUtil {
             if (toMethod == null) {
                 continue;
             }
-            Object value = fromMethod.invoke(from, new Object[0]);
+            Object value = fromMethod.invoke(from);
 
             if (value == null) {
                 continue;
@@ -76,8 +74,7 @@ public class ConvertToolUtil {
                     continue;
                 }
             }
-
-            toMethod.invoke(to, new Object[]{value});
+            toMethod.invoke(to, value);
         }
     }
 
@@ -89,54 +86,39 @@ public class ConvertToolUtil {
      * @param includsArray
      * @throws Exception
      */
-    public static void copyPropertiesInclude(Object from, Object to,
-                                             String[] includsArray) throws Exception {
-
-        List<String> includesList = null;
-
+    public static void copyPropertiesInclude(Object from, Object to, String[] includsArray) throws Exception {
+        List<String> includesList;
         if (includsArray != null && includsArray.length > 0) {
-
             includesList = Arrays.asList(includsArray);
-
         } else {
-
             return;
         }
         Method[] fromMethods = from.getClass().getDeclaredMethods();
         Method[] toMethods = to.getClass().getDeclaredMethods();
         Method fromMethod = null, toMethod = null;
         String fromMethodName = null, toMethodName = null;
-
-        for (int i = 0; i < fromMethods.length; i++) {
-
-            fromMethod = fromMethods[i];
+        for (Method method : fromMethods) {
+            fromMethod = method;
             fromMethodName = fromMethod.getName();
-
             if (!fromMethodName.contains("get")) {
                 continue;
             }
-
             // 排除列表检测
             String str = fromMethodName.substring(3);
-
             if (!includesList.contains(str.substring(0, 1).toLowerCase()
                     + str.substring(1))) {
                 continue;
             }
-
             toMethodName = "set" + fromMethodName.substring(3);
             toMethod = findMethodByName(toMethods, toMethodName);
 
             if (toMethod == null) {
                 continue;
             }
-
-            Object value = fromMethod.invoke(from, new Object[0]);
-
+            Object value = fromMethod.invoke(from);
             if (value == null) {
                 continue;
             }
-
             // 集合类判空处理
             if (value instanceof Collection) {
 
@@ -146,8 +128,7 @@ public class ConvertToolUtil {
                     continue;
                 }
             }
-
-            toMethod.invoke(to, new Object[]{value});
+            toMethod.invoke(to, value);
         }
     }
 
@@ -159,14 +140,10 @@ public class ConvertToolUtil {
      * @return
      */
     public static Method findMethodByName(Method[] methods, String name) {
-
-        for (int j = 0; j < methods.length; j++) {
-
-            if (methods[j].getName().equals(name)) {
-
-                return methods[j];
+        for (Method method : methods) {
+            if (method.getName().equals(name)) {
+                return method;
             }
-
         }
         return null;
     }
