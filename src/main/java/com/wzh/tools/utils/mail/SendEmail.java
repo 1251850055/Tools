@@ -18,7 +18,6 @@ public class SendEmail {
     private static String senderPassword;
     private static String nickname;
 
-
     /*
      * 初始化方法
      */

@@ -75,7 +75,7 @@ public class JsonUtils {
      * 将json结果集转化为Map
      *
      * @param jsonData json数据
-     * @param clazz    对象中的object类型
+     * @param    对象中的object类型
      * @return
      */
     public static Map jsonToMap(String jsonData) {

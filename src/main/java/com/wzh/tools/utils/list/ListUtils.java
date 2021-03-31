@@ -2,8 +2,6 @@ package com.wzh.tools.utils.list;
 
 import java.lang.reflect.Field;
 import java.text.NumberFormat;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -25,22 +23,19 @@ public class ListUtils {
      * @param isAsc       true升序，false降序
      */
     public static <E> void sort(List<E> list, final boolean isAsc, final String... sortNameArr) {
-        Collections.sort(list, new Comparator<E>() {
-            @Override
-            public int compare(E a, E b) {
-                int ret = 0;
-                try {
-                    for (int i = 0; i < sortNameArr.length; i++) {
-                        ret = ListUtils.compareObject(sortNameArr[i], isAsc, a, b);
-                        if (0 != ret) {
-                            break;
-                        }
+        list.sort((a, b) -> {
+            int ret = 0;
+            try {
+                for (String s : sortNameArr) {
+                    ret = ListUtils.compareObject(s, isAsc, a, b);
+                    if (0 != ret) {
+                        break;
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
-                return ret;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+            return ret;
         });
     }
 
@@ -56,22 +51,19 @@ public class ListUtils {
         if (sortNameArr.length != typeArr.length) {
             throw new RuntimeException("属性数组元素个数和升降序数组元素个数不相等");
         }
-        Collections.sort(list, new Comparator<E>() {
-            @Override
-            public int compare(E a, E b) {
-                int ret = 0;
-                try {
-                    for (int i = 0; i < sortNameArr.length; i++) {
-                        ret = ListUtils.compareObject(sortNameArr[i], typeArr[i], a, b);
-                        if (0 != ret) {
-                            break;
-                        }
+        list.sort((a, b) -> {
+            int ret = 0;
+            try {
+                for (int i = 0; i < sortNameArr.length; i++) {
+                    ret = ListUtils.compareObject(sortNameArr[i], typeArr[i], a, b);
+                    if (0 != ret) {
+                        break;
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
-                return ret;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+            return ret;
         });
     }
 

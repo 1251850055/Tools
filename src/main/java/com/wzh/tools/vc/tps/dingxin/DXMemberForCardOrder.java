@@ -20,8 +20,6 @@ public class DXMemberForCardOrder {
 
     public static final String poundage = "0.00";
 
-
-
     public static void main(String[] args) {
 
         StringBuffer request = new StringBuffer();
@@ -30,13 +28,13 @@ public class DXMemberForCardOrder {
         //座位总价格
         BigDecimal sumMemberPrice = new BigDecimal(memberPrice);
         //判断是否为多个座位
-        if (null != seatCode && seatCode.contains(",")) {
+        if (seatCode.contains(",")) {
             StringBuilder strBuilder = new StringBuilder();
             String[] seats = seatCode.split(",");
             //座位单价
             BigDecimal tmpMemberPrice = sumMemberPrice.divide(new BigDecimal(seats.length), 2, RoundingMode.HALF_UP);
             int steps = 0;
-            if (null != seats && seats.length > 0) {
+            if (seats.length > 0) {
                 for (int i = 0; i < seats.length; i++) {
                     if (null != seats[i] && !seats[i].isEmpty()) {
                         if (i == seats.length - 1) {

@@ -18,6 +18,10 @@ public class SplitListUtils {
     public static void main(String[] args) {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
         int limit = countStep(list.size());
+        cutList(list, limit);
+    }
+
+    private static void cutList(List<Integer> list, int limit) {
         //方法一：使用流遍历操作
         Stream.iterate(0, n -> n + 1).limit(limit).forEach(i -> {
             List<Integer> collect = list.stream().skip(i * MAX_NUMBER).limit(MAX_NUMBER).collect(Collectors.toList());
@@ -56,7 +60,7 @@ public class SplitListUtils {
         //偏移量
         int offset = 0;
         for (int i = 0; i < n; i++) {
-            List<T> value = null;
+            List<T> value;
             if (remaider > 0) {
                 value = source.subList(i * number + offset, (i + 1) * number + offset + 1);
                 remaider--;

@@ -3,6 +3,9 @@ package com.wzh.tools.vc.activity;
 
 import com.wzh.tools.utils.time.DateUtil;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @Description:
  * @Author: wangzehui
@@ -10,7 +13,6 @@ import com.wzh.tools.utils.time.DateUtil;
  */
 
 public class BetweenTime {
-
 
     public static void main(String[] args) throws Exception {
 
@@ -23,11 +25,11 @@ public class BetweenTime {
         String[] betweenDateStr = DateUtil.getBetweenDateStr(formatBegin, formatEnd);
         System.out.println(betweenDateStr.length - 1);
 
-//        //日期转换为字符串
-//        LocalDateTime now = LocalDateTime.now();
-//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy:MM:dd HH:mm:ss");
-//        String nowStr = now.format(dtf);
-//        System.out.println(nowStr);
+        //日期转换为字符串
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy:MM:dd HH:mm:ss");
+        String nowStr = now.format(dtf);
+        System.out.println(nowStr);
 
     }
 

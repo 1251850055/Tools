@@ -3,7 +3,7 @@ package com.wzh.tools.utils.string;
 import java.math.BigDecimal;
 
 /**
- * @Description: 指定字符串下标插入元素
+ * @Description: 字符串间隔下标插入
  * @Author: wangzehui
  * @Date: 2020/12/24 15:37
  */
@@ -14,7 +14,12 @@ public class StrUtils {
 
     public static final int LENGTH = 12;
 
-    public static String InsertStr(String str) {
+    public static void main(String[] args) {
+        String srr = "abcdefghijklmnopqrstuvwsyz";
+        System.out.println(insertStr(srr));
+    }
+
+    public static String insertStr(String str) {
         StringBuilder sb = new StringBuilder();
         sb.append(str);
         BigDecimal num = new BigDecimal(str.length()).divide(new BigDecimal(LENGTH), 0, BigDecimal.ROUND_FLOOR);

@@ -36,13 +36,13 @@ public class MD5 {
         String[] params = param.split("&");
 
         // 参数按key进行ASCII码升序排列
-        for (int i = 0; i < params.length; i++) {
-            String[] values = params[i].split("=");
+        for (String s : params) {
+            String[] values = s.split("=");
             paramsMap.put(values[0], values[1]);
         }
 
         // 将排序后的参数用&拼接起来
-        List<String> paramPairs = new ArrayList<String>();
+        List<String> paramPairs = new ArrayList<>();
         for (Map.Entry<String, Object> entry : paramsMap.entrySet()) {
             paramPairs.add(String.valueOf(entry.getValue()));
         }
@@ -69,8 +69,8 @@ public class MD5 {
         System.out.println("*********2" + params.toString());
 
         // 参数按key进行ASCII码升序排列
-        for (int i = 0; i < params.length; i++) {
-            String[] values = params[i].split("=");
+        for (String s : params) {
+            String[] values = s.split("=");
             list.add(values[0] + values[1]);
         }
         Collections.sort(list, Collator.getInstance(Locale.ENGLISH));
@@ -98,8 +98,7 @@ public class MD5 {
             int j = md.length;
             char str[] = new char[j * 2];
             int k = 0;
-            for (int i = 0; i < j; i++) {
-                byte byte0 = md[i];
+            for (byte byte0 : md) {
                 str[k++] = hexDigits[byte0 >>> 4 & 0xf];
                 str[k++] = hexDigits[byte0 & 0xf];
             }

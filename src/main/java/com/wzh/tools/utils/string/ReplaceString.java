@@ -7,6 +7,7 @@ package com.wzh.tools.utils.string;
  */
 
 public class ReplaceString {
+
     public static String replace(String strHtml) {
         //读出body内里所有内容
         String strClear = strHtml.replaceAll(".*?<body.*?>(.*?)</body>", "$1");

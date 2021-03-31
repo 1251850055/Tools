@@ -8,6 +8,7 @@ import java.net.URLEncoder;
 
 /**
  * 导出excel表格
+ *
  * @Date 2019/5/16 13:06
  **/
 public class ExportCSVUtils {
@@ -18,11 +19,6 @@ public class ExportCSVUtils {
      * request
      * tempFile     导出文件
      * filmName     导出文件名称
-     *
-     * @return
-     * @Date 2019/5/6 13:35
-     * @Param
-     * @Author AnguangWang
      **/
     public static void outCsvStream(HttpServletResponse response, HttpServletRequest request, File tempFile, String filmName) throws IOException {
         // 导出文件名称支持汉字
@@ -37,12 +33,10 @@ public class ExportCSVUtils {
             response.addHeader("Access-Control-Allow-Origin", origin);
         }
         response.addHeader("Access-Control-Expose-Headers", "filename");
-
         response.setHeader("Access-Control-Allow-Credentials", "true");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "x-requested-with,access-token,content-type");
-
         response.setContentType("application/csv");
         response.setHeader("content-disposition", "attachment");
         response.setHeader("filename", filmName + ".csv");
@@ -67,11 +61,7 @@ public class ExportCSVUtils {
     public static boolean deleteFile(File file) {
         // 如果文件路径所对应的文件存在，并且是一个文件，则直接删除
         if (file.exists() && file.isFile()) {
-            if (file.delete()) {
-                return true;
-            } else {
-                return false;
-            }
+            return file.delete();
         } else {
             return false;
         }
