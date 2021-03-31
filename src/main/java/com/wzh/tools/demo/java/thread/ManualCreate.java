@@ -8,9 +8,10 @@ import java.util.concurrent.*;
  * @Description:
  * @Author: wangzehui
  * @Date: 2021/3/31 11:13
+ * web:https://www.freesion.com/article/32671046670/
  */
 
-public class manualCreate {
+public class ManualCreate {
 
     public static void main(String[] args) {
         //获取系统处理器个数，作为线程池数量
