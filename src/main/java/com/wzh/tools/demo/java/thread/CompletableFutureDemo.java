@@ -69,7 +69,7 @@ public class CompletableFutureDemo {
         for (Integer i : taskList) {
             list.add(calc(i).toString());
         }
-        System.out.println("list=" + list + ",耗时=" + (System.currentTimeMillis() - start));
+        System.out.println("list=" + list + ",耗时=" + ((System.currentTimeMillis() - start) / 1000 + "s"));
     }
 
     public static Integer calc(Integer i) {

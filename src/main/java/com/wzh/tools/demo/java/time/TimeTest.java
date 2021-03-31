@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class TimeTest {
+
     public static void main(String[] args) {
         getTimeWay1();
         getTimeWay2();
@@ -12,7 +13,6 @@ public class TimeTest {
         getTimeWay4();
         //获取当前时间精确到毫秒
         getTimeWay5();
-
     }
 
     public static void getTimeWay1() {
