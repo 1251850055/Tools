@@ -45,7 +45,7 @@ public class ToolsDataSouseConfig {
         sessionFactory.setDataSource(toolsDataSource);
 
         // 因为重写了SqlSessionFactoryBean，所以要在SqlSessionFactoryBean里面注入分页插件，其次只用maven注入依赖就可以使用分页插件
-        Interceptor[] plugins =  new Interceptor[]{new PageHelper()};
+        Interceptor[] plugins =  new Interceptor[]{(Interceptor) new PageHelper()};
         sessionFactory.setPlugins(plugins);
 
         sessionFactory.setVfs(SpringBootVFS.class);
