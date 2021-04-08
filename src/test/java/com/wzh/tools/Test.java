@@ -12,5 +12,6 @@ public class Test {
     public static void main(String[] args) {
         ManualCreate manualCreate = new ManualCreate();
         manualCreate.init();
+        System.out.println("测试修改Github用户姓名影响");
     }
 }
