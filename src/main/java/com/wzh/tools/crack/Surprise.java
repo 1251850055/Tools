@@ -19,14 +19,20 @@ import java.util.regex.Pattern;
  */
 
 public class Surprise {
+
     private static HttpURLConnection conn = null;
+
     private static InputStream inputStream = null;
+
     private static BufferedInputStream bufferedInputStream = null;
+
     private static FileOutputStream fileOutputStream = null;
+
     //利用预编译正则表达式提高效率
     private static Pattern pattern = Pattern.compile("/images/\\w+");
 
     public static void main(String[] args) throws IOException {
+
         for (int i = 1; i <= 5; i++) {
             //创建url
             URL url = new URL("https://gank.io/special/Girl/page/" + i);
