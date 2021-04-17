@@ -1,5 +1,6 @@
 package com.wzh.tools.utils.dataresult;
 
+import lombok.Data;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collections;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * @author vc
  */
-
+@Data
 public class PageEntity<T> {
     //总页数
     private int totalPages;
@@ -68,47 +69,4 @@ public class PageEntity<T> {
         this.totalPages = tp;
     }
 
-    public int getTotalPages() {
-        return totalPages;
-    }
-
-    public void setTotalPages(int totalPages) {
-        this.totalPages = totalPages;
-    }
-
-    public int getTotalRows() {
-        return totalRows;
-    }
-
-    public void setTotalRows(int totalRows) {
-        this.totalRows = totalRows;
-    }
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public int getRows() {
-        return rows;
-    }
-
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
-
-    public List<T> getList() {
-        return list;
-    }
-
-    public void setList(List<T> list) {
-        this.list = list;
-    }
-
-    public static void main(String[] args) {
-        System.out.println((int) Math.ceil(1 / (1 * 1.0)));
-    }
 }

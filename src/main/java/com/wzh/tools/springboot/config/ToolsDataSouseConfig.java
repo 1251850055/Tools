@@ -1,8 +1,6 @@
 package com.wzh.tools.springboot.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.github.pagehelper.PageHelper;
-import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -45,8 +43,8 @@ public class ToolsDataSouseConfig {
         sessionFactory.setDataSource(toolsDataSource);
 
         // 因为重写了SqlSessionFactoryBean，所以要在SqlSessionFactoryBean里面注入分页插件，其次只用maven注入依赖就可以使用分页插件
-        Interceptor[] plugins =  new Interceptor[]{(Interceptor) new PageHelper()};
-        sessionFactory.setPlugins(plugins);
+//        Interceptor[] plugins =  new Interceptor[]{new PageHelper()};
+//        sessionFactory.setPlugins(plugins);
 
         sessionFactory.setVfs(SpringBootVFS.class);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATION));

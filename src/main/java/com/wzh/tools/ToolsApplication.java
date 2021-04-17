@@ -10,7 +10,7 @@ public class ToolsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ToolsApplication.class, args);
-        System.out.println("————————————————————————异地测试需导入user.sql脚本————————————————————————————————");
+        System.out.println("——————————————————————异地测试需导入user.sql脚本,修改数据库连接——————————————————————");
     }
 
 

@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.Date;
 import java.util.concurrent.*;
 
@@ -54,7 +53,7 @@ public class ManualCreate {
 
     private static BlockingQueue<Integer> QUEUE = new LinkedBlockingQueue<>();
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         start();
         process();

@@ -34,7 +34,6 @@ logging:
   level:
     com.wzh.tools.springboot : debug
 
-----------------------------
 #分页插件
 pagehelper:
   helper-dialect: mysql
@@ -43,7 +42,6 @@ pagehelper:
   params: count=countSql
 
 
-----------------------------
 redis:
   dispenser: true
   mastername: mymaster
@@ -59,4 +57,3 @@ redis:
     timeBetweenEvictionRunsMillis: 30000
     numTestsPerEvictionRun: 10
     minEvictableIdleTimeMillis: 60000
-----------------------------
