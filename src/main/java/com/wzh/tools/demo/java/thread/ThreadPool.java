@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 
 /**
- * @author VC电影
+ * @author wangzehui
  */
 public class ThreadPool {
 

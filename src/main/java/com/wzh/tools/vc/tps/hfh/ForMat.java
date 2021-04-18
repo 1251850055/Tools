@@ -4,7 +4,7 @@ package com.wzh.tools.vc.tps.hfh;
 
 
 /**
- * @author VC电影
+ * @author wangzehui
  */
 public class ForMat {
     public static void main (String[] args){

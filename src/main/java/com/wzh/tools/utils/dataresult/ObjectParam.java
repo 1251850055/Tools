@@ -3,7 +3,7 @@ package com.wzh.tools.utils.dataresult;
 import java.io.Serializable;
 
 /**
- * @Author: vc
+ * @Author: wangzehui
  */
 public class ObjectParam implements Serializable {
     private static final long serialVersionUID = -4759249614246684897L;

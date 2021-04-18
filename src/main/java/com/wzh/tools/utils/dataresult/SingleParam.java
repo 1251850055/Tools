@@ -3,7 +3,7 @@ package com.wzh.tools.utils.dataresult;
 import java.io.Serializable;
 
 /**
- * @Author: vc
+ * @Author: wangzehui
  * 单个对象返回对象
  */
 public class SingleParam<T> extends ObjectParam implements Serializable {

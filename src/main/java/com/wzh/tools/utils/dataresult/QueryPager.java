@@ -4,7 +4,7 @@ package com.wzh.tools.utils.dataresult;
 import java.io.Serializable;
 /**
  * @Description:
- * @Author: vc
+ * @Author: wangzehui
  * @Date: 2019/8/27 19:10
  */
 public class QueryPager implements Serializable {

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @Author: vc
+ * @Author: wangzehui
  */
 public class PageParam<T> extends ObjectParam implements Serializable {
 

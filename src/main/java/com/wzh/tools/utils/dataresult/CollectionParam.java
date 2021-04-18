@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by VC.
+ * Created by wangzehui.
  * 集合返回对象
  */
 public class CollectionParam<T> extends ObjectParam  implements Serializable {
