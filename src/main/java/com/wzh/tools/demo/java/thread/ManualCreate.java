@@ -19,12 +19,12 @@ import java.util.concurrent.*;
 @Service
 public class ManualCreate {
 
-    private static Logger logger = LoggerFactory.getLogger(ManualCreate.class);
+    private static final Logger logger = LoggerFactory.getLogger(ManualCreate.class);
 
     //获取机器核数，作为线程池数量
-    private static int THREAD_COUNT = Runtime.getRuntime().availableProcessors();
+    private static final int THREAD_COUNT = Runtime.getRuntime().availableProcessors();
 
-    private static ThreadFactory NAME_THREAD_FACTORY = new ThreadFactoryBuilder().setNameFormat("demo-pool-wzhTest").build();
+    private static final ThreadFactory NAME_THREAD_FACTORY = new ThreadFactoryBuilder().setNameFormat("demo-pool-wzhTest").build();
 
     /**
      * Semaphore也是一个线程同步的辅助类，可以维护当前访问自身的线程个数，并提供了同步机制。使用Semaphore可以控制同时访问资源的线程个数
@@ -51,11 +51,11 @@ public class ManualCreate {
      * (3)DiscardOldestPolicy:丢弃队列最前面任务,执行该任务
      * (4)CallerRunsPolicy:是不会丢弃任务，直接运行任务的run方法，即使用主线程执行任务
      */
-    private static ExecutorService SERVICE = new ThreadPoolExecutor(THREAD_COUNT, 10,
+    private static final ExecutorService SERVICE = new ThreadPoolExecutor(THREAD_COUNT, 10,
             0L, TimeUnit.MILLISECONDS,
             new LinkedBlockingQueue<>(1024), NAME_THREAD_FACTORY, new ThreadPoolExecutor.CallerRunsPolicy());
 
-    private static BlockingQueue<Integer> QUEUE = new LinkedBlockingQueue<>();
+    private static final BlockingQueue<Integer> QUEUE = new LinkedBlockingQueue<>();
 
 //    @PostConstruct
     public void init() {
