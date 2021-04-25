@@ -3,10 +3,12 @@ package com.wzh.tools.demo.java.thread;
 import com.alibaba.nacos.api.utils.NetUtils;
 import com.alibaba.nacos.api.utils.StringUtils;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.wzh.tools.utils.time.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.Date;
 import java.util.concurrent.*;
 
@@ -57,7 +59,7 @@ public class ManualCreate {
 
     private static final BlockingQueue<Integer> QUEUE = new LinkedBlockingQueue<>();
 
-//    @PostConstruct
+    @PostConstruct
     public void init() {
         start();
         process();
@@ -105,9 +107,8 @@ public class ManualCreate {
                     }
 
                     if (taskNum > 0) {
-                        long flagTime = System.currentTimeMillis();
                         //todo 比如根据taskNum 锁定重试任务表 where locker = ip limit taskNum
-                        System.out.println("处理业务的机器为：" + IP + flagTime);
+                        System.out.println("获取业务，处理业务的机器为：" + IP + "时间:" + DateUtil.parse(new Date()));
                     }
 
                     //QUEUE.put() 处理实体类
@@ -118,7 +119,7 @@ public class ManualCreate {
                 } catch (Exception e) {
                     logger.error(e.getMessage());
                 } finally {
-                    logger.debug("休眠时间:" + new Date());
+                    logger.debug("休眠时间:" + DateUtil.parse(new Date()));
                 }
             }
         }
@@ -142,11 +143,12 @@ public class ManualCreate {
         }
     }
 
+    //处理业务完成 释放信号
     private void consume(Integer i) {
         try {
             System.out.println("处理次数" + i);
         } catch (Exception exp) {
-            logger.error("重试异常");
+            logger.error("重试异常" + exp);
         } finally {
             SEMAPHORE.release();
         }
