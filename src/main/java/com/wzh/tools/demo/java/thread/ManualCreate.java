@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.concurrent.*;
 
 /**
- * @Description:
+ * @Description:  问题:为什么使用线程池：创建和销毁线程耗费大量的时间,效率很低 为了提高线程的利用率使用线程池
  * @Author: wangzehui
  * @Date: 2021/3/31 11:13
  * web:https://www.freesion.com/article/32671046670/
@@ -40,16 +40,20 @@ public class ManualCreate {
 
     /*
      * corePoolSize => 线程池核心线程数量
-     * maximumPoolSize => 线程池最大数量
-     * keepAliveTime => 空闲线程存活时间
+     * maximumPoolSize => 线程池最大数量,必须大于等于1
+     * keepAliveTime => 空闲线程存活时间,当空闲时间到达此值,多余线程会被销毁到核心线程数量
      * unit => 时间单位
-     * workQueue => 线程池所使用的缓冲队列
+     * workQueue => 线程池所使用的缓冲队列,里面放了被提交但尚未被执行的任务
      * threadFactory => 线程池创建线程使用的工厂
-     * handler => 线程池对拒绝任务的处理策略
+     * handler => 拒绝策略，当线程池最大数和队列都满了，对任务的拒绝方式
+     * (1)AbortPolicy:默认策略 抛出异常
+     * (2)DiscardPolicy:丢弃任务
+     * (3)DiscardOldestPolicy:丢弃队列最前面任务,执行该任务
+     * (4)CallerRunsPolicy:是不会丢弃任务，直接运行任务的run方法，即使用主线程执行任务
      */
-    private static ExecutorService SERVICE = new ThreadPoolExecutor(THREAD_COUNT, 200,
+    private static ExecutorService SERVICE = new ThreadPoolExecutor(THREAD_COUNT, 10,
             0L, TimeUnit.MILLISECONDS,
-            new LinkedBlockingQueue<>(1024), NAME_THREAD_FACTORY, new ThreadPoolExecutor.AbortPolicy());
+            new LinkedBlockingQueue<>(1024), NAME_THREAD_FACTORY, new ThreadPoolExecutor.CallerRunsPolicy());
 
     private static BlockingQueue<Integer> QUEUE = new LinkedBlockingQueue<>();
 
