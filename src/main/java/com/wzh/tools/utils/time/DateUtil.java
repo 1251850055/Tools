@@ -214,21 +214,13 @@ public class DateUtil {
                 long now = sdf.parse(curTime).getTime();
                 long start = sdf.parse(args[0]).getTime();
                 long end = sdf.parse(args[1]).getTime();
-                if (args[1].equals("00:00")) {
+                if ("00:00".equals(args[1])) {
                     args[1] = "24:00";
                 }
                 if (end < start) {
-                    if (now >= end && now <= start) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    return now < end || now > start;
                 } else {
-                    if (now >= start && now <= end) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                    return now >= start && now <= end;
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -592,4 +584,24 @@ public class DateUtil {
         d = ca.getTime();
         return d;
     }
+
+    /**
+     * 判断时间是否属于范围内
+     * @param now
+     * @param start
+     * @param end
+     * @return
+     */
+    public static boolean between(Date now, Date start, Date end) {
+        if (null == now || null == start || null == end) {
+            return false;
+        }
+        return now.compareTo(start) >= 0 && now.compareTo(end) < 0;
+    }
+
+    public static void main(String[] args) {
+        boolean result = between(parse("2021-07-03 23:59:59", DATE_FULL_STR), parse("2021-06-11 00:00:00", DATE_FULL_STR), parse("2021-07-03 23:59:59", DATE_FULL_STR));
+        System.out.println(result);
+    }
+
 }
