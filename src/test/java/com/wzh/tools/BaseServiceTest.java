@@ -23,21 +23,38 @@ import java.util.Map;
 
 public class BaseServiceTest {
 
-    private String key = PropertiesReader.get("key");
-    private String customer = PropertiesReader.get("customer");
-    private String secret = PropertiesReader.get("secret");
-    private String siid = PropertiesReader.get("siid");
-    private String userid = PropertiesReader.get("userid");
-    private String tid = PropertiesReader.get("tid");
-    private String secret_key = PropertiesReader.get("secret_key");
-    private String secret_secret = PropertiesReader.get("secret_secret");
+    /**
+     * 快递100的基础账号信息，可以在这里获取
+     * https://poll.kuaidi100.com/manager/page/myinfo/enterprise
+     * user:wangzehui  pwd:wangzehui123
+     */
+    private String key = "ipmpebco7249";
+    private String customer = "8F3F485403D70B738F849B6AFCB11F5C";
+    private String secret = "8db70e76fb5444e4901ad5affc52dbb1";
+    private String userid = "938985a6633e47bb820ebc7a4a4af468";
+
+    /**
+     *
+     */
+    private final String siid = "";
+    /**
+     * 短信模板id
+     */
+    private final String tid = "";
+    /**
+     * 云平台相关 非必填
+     * 登录云平台 https://cloud.kuaidi100.com/buyer/user/info
+     * user：18500507445  pwd：Wangzehui123
+     */
+    private final String secret_key = "RZVmSn4ynzrjiQYVed";
+    private final String secret_secret = "fed2dc38eab94e8a8face5d4bd08ea7e";
 
 
     /**
      * 查询物流轨迹
      */
     @Test
-    public void testQueryTrack() throws Exception{
+    public void testQueryTrack() throws Exception {
 
         QueryTrackReq queryTrackReq = new QueryTrackReq();
         QueryTrackParam queryTrackParam = new QueryTrackParam();
@@ -48,7 +65,7 @@ public class BaseServiceTest {
 
         queryTrackReq.setParam(param);
         queryTrackReq.setCustomer(customer);
-        queryTrackReq.setSign(SignUtils.querySign(param ,key,customer));
+        queryTrackReq.setSign(SignUtils.querySign(param, key, customer));
 
         IBaseClient baseClient = new QueryTrack();
         System.out.println(baseClient.execute(queryTrackReq));
@@ -58,7 +75,7 @@ public class BaseServiceTest {
      * 快递信息地图轨迹
      */
     @Test
-    public void testQueryMapView() throws Exception{
+    public void testQueryMapView() throws Exception {
 
         QueryTrackReq queryTrackReq = new QueryTrackReq();
         QueryTrackParam queryTrackParam = new QueryTrackParam();
@@ -71,11 +88,11 @@ public class BaseServiceTest {
         String param = new Gson().toJson(queryTrackParam);
         queryTrackReq.setParam(param);
         queryTrackReq.setCustomer(customer);
-        queryTrackReq.setSign(SignUtils.querySign(param ,key,customer));
+        queryTrackReq.setSign(SignUtils.querySign(param, key, customer));
 
         IBaseClient baseClient = new QueryTrackMap();
         HttpResult result = baseClient.execute(queryTrackReq);
-        QueryTrackMapResp queryTrackMapResp = new Gson().fromJson(result.getBody(),QueryTrackMapResp.class);
+        QueryTrackMapResp queryTrackMapResp = new Gson().fromJson(result.getBody(), QueryTrackMapResp.class);
         System.out.println(queryTrackMapResp);
     }
 
@@ -83,7 +100,7 @@ public class BaseServiceTest {
      * 订阅
      */
     @Test
-    public void testSubscribe() throws Exception{
+    public void testSubscribe() throws Exception {
         SubscribeParameters subscribeParameters = new SubscribeParameters();
         subscribeParameters.setCallbackurl("http://www.baidu.com");
         subscribeParameters.setPhone("17725390266");
@@ -106,11 +123,10 @@ public class BaseServiceTest {
      * 智能识别接口（正式用户可以使用）
      */
     @Test
-    public void testAutoNum() throws Exception{
+    public void testAutoNum() throws Exception {
         AutoNumReq autoNumReq = new AutoNumReq();
         autoNumReq.setKey(key);
         autoNumReq.setNum("773039762404825");
-
         IBaseClient baseClient = new AutoNum();
         System.out.println(baseClient.execute(autoNumReq));
     }
@@ -119,7 +135,7 @@ public class BaseServiceTest {
      * 电子面单图片接口
      */
     @Test
-    public void testPrintImg() throws Exception{
+    public void testPrintImg() throws Exception {
         PrintImgParam printImgParam = new PrintImgParam();
         printImgParam.setKuaidicom(CompanyConstant.ZJS);
         printImgParam.setSendManName("张三");
@@ -134,7 +150,7 @@ public class BaseServiceTest {
 
         String param = new Gson().toJson(printImgParam);
         String t = System.currentTimeMillis() + "";
-        String sign = SignUtils.printSign(param,t,key,secret);
+        String sign = SignUtils.printSign(param, t, key, secret);
 
         PrintReq printReq = new PrintReq();
         printReq.setKey(key);
@@ -151,8 +167,8 @@ public class BaseServiceTest {
      * 电子面单html接口
      */
     @Test
-    public void testPrintHtml() throws Exception{
-        ManInfo recManInfo  = new ManInfo();
+    public void testPrintHtml() throws Exception {
+        ManInfo recManInfo = new ManInfo();
         recManInfo.setName("张三");
         recManInfo.setMobile("15999566666");
         recManInfo.setPrintAddr("广东省深圳市南山区科技南十二路");
@@ -173,7 +189,7 @@ public class BaseServiceTest {
 
         String t = System.currentTimeMillis() + "";
         String param = new Gson().toJson(printHtmlParam);
-        String sign = SignUtils.printSign(param,t,key,secret);
+        String sign = SignUtils.printSign(param, t, key, secret);
 
         PrintReq printReq = new PrintReq();
         printReq.setKey(key);
@@ -190,8 +206,8 @@ public class BaseServiceTest {
      * 电子面单打印
      */
     @Test
-    public void testPrintCloud() throws Exception{
-        ManInfo recManInfo  = new ManInfo();
+    public void testPrintCloud() throws Exception {
+        ManInfo recManInfo = new ManInfo();
         recManInfo.setName("张三");
         recManInfo.setMobile("15999566666");
         recManInfo.setPrintAddr("广东省深圳市南山区科技南十二路");
@@ -216,7 +232,7 @@ public class BaseServiceTest {
         printReq.setT(t);
         printReq.setKey(key);
         printReq.setMethod(ApiInfoConstant.ELECTRONIC_ORDER_PRINT_METHOD);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setParam(param);
 
         IBaseClient baseClient = new PrintCloud();
@@ -227,7 +243,7 @@ public class BaseServiceTest {
      * 云打印自定义
      */
     @Test
-    public void testCloudCustom() throws Exception{
+    public void testCloudCustom() throws Exception {
         CloudPrintCustomParam cloudPrintCustomParam = new CloudPrintCustomParam();
         cloudPrintCustomParam.setSiid(siid);
         cloudPrintCustomParam.setCallBackUrl("http://www.baidu.com");
@@ -240,7 +256,7 @@ public class BaseServiceTest {
         printReq.setKey(key);
         printReq.setMethod(ApiInfoConstant.CLOUD_PRINT_CUSTOM_METHOD);
         printReq.setT(t);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setParam(param);
 
         IBaseClient baseClient = new CloudPrintCustom();
@@ -251,7 +267,7 @@ public class BaseServiceTest {
      * 云打印附件
      */
     @Test
-    public void testCloudAttachment() throws Exception{
+    public void testCloudAttachment() throws Exception {
         CloudPrintAttachmentParam cloudPrintAttachmentParam = new CloudPrintAttachmentParam();
         cloudPrintAttachmentParam.setSiid(siid);
         cloudPrintAttachmentParam.setCallBackUrl("http://www.baidu.com");
@@ -263,7 +279,7 @@ public class BaseServiceTest {
         cloudPrintAttachmentReq.setKey(key);
         cloudPrintAttachmentReq.setMethod(ApiInfoConstant.CLOUD_PRINT_ATTACHMENT_METHOD);
         cloudPrintAttachmentReq.setT(t);
-        cloudPrintAttachmentReq.setSign(SignUtils.printSign(param,t,key,secret));
+        cloudPrintAttachmentReq.setSign(SignUtils.printSign(param, t, key, secret));
         cloudPrintAttachmentReq.setParam(param);
         cloudPrintAttachmentReq.setFile(new File("C:\\Users\\Administrator.-20171106WFEKLN\\Desktop\\1.jpg"));
 
@@ -275,7 +291,7 @@ public class BaseServiceTest {
      * 复打
      */
     @Test
-    public void testCloudPrintOld() throws Exception{
+    public void testCloudPrintOld() throws Exception {
         PrintReq printReq = new PrintReq();
         CloudPrintOldParam cloudPrintOldParam = new CloudPrintOldParam();
         cloudPrintOldParam.setTaskId("D21DB1AC74A260E6F5604FC43B4598B8");
@@ -286,7 +302,7 @@ public class BaseServiceTest {
         printReq.setKey(key);
         printReq.setMethod(ApiInfoConstant.CLOUD_PRINT_OLD_METHOD);
         printReq.setT(t);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setParam(param);
 
         IBaseClient cloudPrintOld = new CloudPrintOld();
@@ -297,17 +313,17 @@ public class BaseServiceTest {
      * 发送短信
      */
     @Test
-    public void testSendSms() throws Exception{
+    public void testSendSms() throws Exception {
         SendSmsReq sendSmsReq = new SendSmsReq();
         sendSmsReq.setCallback("http://www.baidu.com");
-        Map<String,String> content = new HashMap<String, String>();
-        content.put("username","测试用户");
+        Map<String, String> content = new HashMap<String, String>();
+        content.put("username", "测试用户");
         sendSmsReq.setContent(new Gson().toJson(content));
         sendSmsReq.setPhone("15994708912");
         sendSmsReq.setSeller("贵司名称");
         sendSmsReq.setUserid(userid);
         sendSmsReq.setTid(tid);
-        sendSmsReq.setSign(SignUtils.smsSign(key,userid));
+        sendSmsReq.setSign(SignUtils.smsSign(key, userid));
 
         IBaseClient sendSms = new SendSms();
         System.out.println(sendSms.execute(sendSmsReq));
@@ -326,7 +342,7 @@ public class BaseServiceTest {
 
         PrintReq printReq = new PrintReq();
         printReq.setKey(key);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setT(t);
         printReq.setParam(param);
         printReq.setMethod(ApiInfoConstant.B_ORDER_QUERY_TRANSPORT_CAPACITY_METHOD);
@@ -360,7 +376,7 @@ public class BaseServiceTest {
         String param = new Gson().toJson(bOrderReq);
 
         printReq.setKey(key);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setT(t);
         printReq.setParam(param);
         printReq.setMethod(ApiInfoConstant.B_ORDER_SEND_METHOD);
@@ -383,7 +399,7 @@ public class BaseServiceTest {
         String param = new Gson().toJson(bOrderGetCodeReq);
 
         printReq.setKey(key);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setT(t);
         printReq.setParam(param);
         printReq.setMethod(ApiInfoConstant.B_ORDER_CODE_METHOD);
@@ -407,7 +423,7 @@ public class BaseServiceTest {
         String param = new Gson().toJson(bOrderCancelReq);
 
         printReq.setKey(key);
-        printReq.setSign(SignUtils.printSign(param,t,key,secret));
+        printReq.setSign(SignUtils.printSign(param, t, key, secret));
         printReq.setT(t);
         printReq.setParam(param);
         printReq.setMethod(ApiInfoConstant.B_ORDER_CANCEL_METHOD);
@@ -451,7 +467,7 @@ public class BaseServiceTest {
         cOrderReq.setSalt("123456");
         cOrderReq.setSecret_key(secret_key);
         cOrderReq.setSecret_code(CloudApiCodeConstant.ORDER);
-        cOrderReq.setSecret_sign(SignUtils.cloudSign(secret_key,secret_secret));
+        cOrderReq.setSecret_sign(SignUtils.cloudSign(secret_key, secret_secret));
 
         IBaseClient cloudBase = new CloudBase();
         System.out.println(cloudBase.execute(cOrderReq));
@@ -468,7 +484,7 @@ public class BaseServiceTest {
         cOrderCancelReq.setCancelMsg("测试单");
         cOrderCancelReq.setSecret_key(secret_key);
         cOrderCancelReq.setSecret_code(CloudApiCodeConstant.ORDER_CANCEL);
-        cOrderCancelReq.setSecret_sign(SignUtils.cloudSign(secret_key,secret_secret));
+        cOrderCancelReq.setSecret_sign(SignUtils.cloudSign(secret_key, secret_secret));
 
         IBaseClient cloudBase = new CloudBase();
         System.out.println(cloudBase.execute(cOrderCancelReq));
